@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@font-face {
+  font-family: "P22";
+  src: url("/font/font.ttf") format("truetype");
+}
+
+.swiperContainer {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiperSlide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .info {
+    position: absolute;
+    left: 20%;
+    bottom: 40%;
+    font-size: 14px;
+    line-height: 2;
+
+    p {
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    span {
+      display: block;
+      line-height: 1.5;
+      font-weight: 200;
+    }
+  }
+
+  .pricing {
+    padding-top: 60px;
+    position: absolute;
+    right: 10%;
+    font-size: 14px;
+
+    p {
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    span {
+      display: block;
+      line-height: 1.5;
+      font-weight: 200;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 30px;
+    }
+  }
+
+  .btnBlock {
+    display: flex;
+    margin-top: 10px;
+
+    .btn, .lightBtn {
+      padding: 18px 60px;
+      font-family: "Poppins", sans-serif;
+      background: rgba(0, 0, 0, 0.25);
+      border: none;
+      color: #fff;
+      font-size: 10px;
+      cursor: pointer;
+    }
+
+    .lightBtn {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .mainImg {
+    object-fit: cover;
+    height: 100%;
+  }
+}
+
+.swiperThumbs {
+  position: fixed;
+  top: 65%;
+  right: 30%;
+  z-index: 10;
+  width: 300px;
+  overflow: hidden;
+
+  .swiperSlide {
+    height: 50px;
+    cursor: pointer;
+  }
+}
+
+.scroll {
+  position: absolute;
+  top: 80%;
+  right: 30%;
+  z-index: 10;
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.social {
+  position: absolute;
+  top: 90%;
+  left: 20%;
+  z-index: 10;
+  font-size: 14px;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    margin-inline: 10px;
+  }
+}
+
+// Responsive Styles
+@media (max-width: 1200px) {
+  .swiperSlide {
+    .info {
+      left: 15%;
+      bottom: 35%;
+    }
+
+    .pricing {
+      right: 5%;
+    }
+  }
+
+  .swiperThumbs {
+    top: 60%;
+    right: 20%;
+  }
+
+  .scroll {
+    top: 75%;
+    right: 20%;
+  }
+
+  .social {
+    top: 85%;
+    left: 15%;
+  }
+}
+
+@media (max-width: 768px) {
+  .swiperSlide {
+    .info {
+      left: 10%;
+      bottom: 30%;
+      font-size: 12px;
+
+      p {
+        margin-top: 5px;
+      }
+
+      span {
+        line-height: 1.3;
+      }
+    }
+
+    .pricing {
+      right: 5%;
+      font-size: 12px;
+
+      h3 {
+        font-size: 24px;
+      }
+    }
+
+    .btnBlock {
+      .btn, .lightBtn {
+        padding: 12px 40px;
+        font-size: 8px;
+      }
+    }
+  }
+
+  .swiperThumbs {
+    top: 55%;
+    right: 15%;
+    width: 200px;
+
+    .swiperSlide {
+      height: 40px;
+    }
+  }
+
+  .scroll {
+    top: 70%;
+    right: 15%;
+    font-size: 10px;
+  }
+
+  .social {
+    top: 80%;
+    left: 10%;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .swiperSlide {
+    .info {
+      left: 5%;
+      bottom: 25%;
+      font-size: 10px;
+
+      span {
+        line-height: 1.2;
+      }
+    }
+
+    .pricing {
+      right: 5%;
+      font-size: 10px;
+
+      h3 {
+        font-size: 20px;
+      }
+    }
+
+    .btnBlock {
+      .btn, .lightBtn {
+        padding: 10px 30px;
+        font-size: 7px;
+      }
+    }
+  }
+
+  .swiperThumbs {
+    top: 50%;
+    right: 10%;
+    width: 150px;
+
+    .swiperSlide {
+      height: 30px;
+    }
+  }
+
+  .scroll {
+    top: 65%;
+    right: 10%;
+    font-size: 8px;
+  }
+
+  .social {
+    top: 75%;
+    left: 5%;
+    font-size: 10px;
+  }
+}
