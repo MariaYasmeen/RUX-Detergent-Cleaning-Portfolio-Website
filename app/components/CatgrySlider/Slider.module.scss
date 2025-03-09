@@ -1,0 +1,142 @@
+.slider {
+  width: 100%;
+  padding: 48px;
+  background: rgb(194, 231, 185); // Base background color
+  position: relative;
+  overflow: hidden;
+
+  // Create the tilted lines texture
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%; // Double height to allow for smooth animation
+    background: repeating-linear-gradient(
+      75deg, // Angle of the lines
+      rgba(6, 34, 21, 0.2) 0, // Darker lines for better visibility
+      rgba(0, 0, 0, 0.1) 1px, // Line thickness
+      transparent 1px, // Gap between lines
+      transparent 20px // Spacing between lines
+    );
+    z-index: 1;
+    animation: moveLines 5s linear infinite; // Faster animation for better visibility
+  }
+
+  // Animation to move the lines
+  @keyframes moveLines {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100px); // Move upward to create a seamless loop
+    }
+  }
+
+  // Ensure content is above the lines
+  .swiper {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: #fff;
+  padding: 30px;
+  border-radius: 18px;
+   height: 720px;
+   margin-bottom: 27px;
+  max-width: 100%;
+}
+.ctgrypgheading{
+  display: flex; 
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: rgb(16, 41, 11); 
+  font-size: 36px !important;
+  background: rgb(194, 231, 185);
+  padding: 3em 0em 0.5em 1.5em;
+}
+
+.ctgrypgsubheading{
+  color: rgb(16, 41, 11); 
+  letter-spacing: 0.1px;
+  font-size: 18px !important;
+  background: rgb(194, 231, 185);
+  padding:0px 50px 0px 50px;
+}
+.cardContent {
+  width: 100%;
+  padding-bottom: 30px;
+  h2 { 
+    color: rgb(21, 73, 8);
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+  h4{
+    font-weight: 200;
+    font-size: 19px;
+    margin-bottom: 24px;
+    color: rgb(14, 49, 6);
+
+  }
+  p {
+    font-size: 25px;
+    padding-bottom: 23px;
+    margin-bottom: 18px;
+    font-weight: 400;
+    color: rgb(31, 66, 23);
+  }
+  button {
+    background: rgb(44, 189, 6);
+    color: #fff;
+    padding: 15px 24px;
+    border-radius: 33px;
+    font-size: 17px !important;
+    border: none;
+    margin-bottom: 23px;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      background: rgb(11, 115, 214);
+    }
+  }
+}
+
+.videoWrapper {
+  width: 100%;
+  padding-top: 56.25%; // 16:9 aspect ratio (9 / 16 * 100)
+  position: relative;
+  overflow: hidden;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+}
+
+
+@media (max-width: 768px) {
+   
+  .cardContent {
+    text-align: center; 
+  }
+  .cardContent h2 {
+    font-size: 22px;
+  }
+  .cardContent p {
+    font-size: 18px;
+  }
+  .videoWrapper {
+    height: 350px;
+  }
+}

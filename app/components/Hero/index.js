@@ -6,7 +6,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "../Navbar/Navbar";
 import ParallaxSection from "../ParallaxSection/ParallaxSection";
 import SwiperSlider from "../SwiperSlider/SwiperSlider";
-import AnimatedText from "../TextAnim/AnimatedText";
+import AnimatedText from "../TextAnim/AnimatedText"; 
+import Slider from "../CatgrySlider/Slider";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,6 +16,42 @@ const Hero = () => {
   const parallaxRef = useRef(null);
   const animatedTextRef = useRef(null);
 
+
+  const slidesData = [
+    {
+      season: "FALL 2023",
+      description: "@ Urban elegance meets innovation",
+      brand: "MONCLER GENIUS",
+      details: "Bold, modern, and technical",
+      color: "Blood Orange",
+      price: "$1249.00",
+      image: "/images/7.png",
+      background: "linear-gradient(to bottom, #FE783D, #121826)",
+    },
+    {
+      season: "WINTER 2023",
+      description: "@ Extreme comfort and style",
+      brand: "CANADA GOOSE",
+      details: "Luxury warmth for all seasons",
+      color: "Deep Blue",
+      price: "$999.00",
+      image: "/images/2.png",
+      background: "linear-gradient(to bottom, #00499D, #121826)",
+    },
+    {
+      season: "SUMMER 2023",
+      description: "@ Light and breathable wear",
+      brand: "NIKE TECH",
+      details: "Innovation meets performance",
+      color: "Sky Blue",
+      price: "$849.00",
+      image: "/images/4.png",
+      background: "linear-gradient(to bottom, #DAB1C8, #511990)",
+    },
+  ];
+
+  
+  
   useEffect(() => {
     const context = gsap.context(() => {
       gsap.fromTo(
@@ -51,12 +88,12 @@ const Hero = () => {
           <AnimatedText />
         </div>
       </div>
-
-      <SwiperSlider />
-
       <div className="container-custom pt-24 md:pt-28">
-        {/* Your content will go here */}
+      <Slider />
       </div>
+        <SwiperSlider slides={slidesData} />;
+
+    
     </main>
   );
 };

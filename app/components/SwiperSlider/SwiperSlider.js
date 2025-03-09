@@ -7,7 +7,7 @@ import gsap from "gsap";
 import styles from "./SwiperSlider.module.scss";
 import "swiper/swiper-bundle.css";
 
-const SwiperSlider = () => {
+const SwiperSlider = ({ slides }) => {
   const swiperRef = useRef(null);
 
   useEffect(() => {
@@ -70,78 +70,32 @@ const SwiperSlider = () => {
         }}
         className={styles.swiper}
       >
-        <SwiperSlide className={styles.swiperSlide} style={{ background: "linear-gradient(to bottom, #FE783D, #121826)" }}>
-          <div className={styles.info}>
-            <p>FALL 2023</p>
-            <span>@ Urban elegance <br /> meets innovation</span>
-            <p>MONCLER GENIUS</p>
-            <span>Bold, modern, <br /> and technical</span>
-          </div>
-          <div className={styles.pricing}>
-            <p>Color:</p>
-            <span>Blood Orange</span>
-            <h3>$1249.00</h3>
-            <div className={styles.btnBlock}>
-              <button className={styles.lightBtn}>Buy Now</button>
-              <button className={styles.btn}>Add To Cart</button>
+        {slides.map((slide, index) => (
+          <SwiperSlide
+            key={index}
+            className={styles.swiperSlide}
+            style={{ background: slide.background }}
+          >
+            <div className={styles.info}>
+              <p>{slide.season}</p>
+              <span>{slide.description}</span>
+              <p>{slide.brand}</p>
+              <span>{slide.details}</span>
             </div>
-          </div>
-          <img src="/images/7.png" alt="Slide 1" className={styles.mainImg} />
-        </SwiperSlide>
-
-        <SwiperSlide className={styles.swiperSlide} style={{ background: "linear-gradient(to bottom, #00499D, #121826)" }}>
-          <div className={styles.info}>
-            <p>FALL 2023</p>
-            <span>@ Urban elegance <br /> meets innovation</span>
-            <p>MONCLER GENIUS</p>
-            <span>Bold, modern, <br /> and technical</span>
-          </div>
-          <div className={styles.pricing}>
-            <p>Color:</p>
-            <span>Blood Orange</span>
-            <h3>$1249.00</h3>
-            <div className={styles.btnBlock}>
-              <button className={styles.lightBtn}>Buy Now</button>
-              <button className={styles.btn}>Add To Cart</button>
+            <div className={styles.pricing}>
+              <p>Color:</p>
+              <span>{slide.color}</span>
+              <h3>{slide.price}</h3>
+              <div className={styles.btnBlock}>
+                <button className={styles.lightBtn}>Buy Now</button>
+                <button className={styles.btn}>Add To Cart</button>
+              </div>
             </div>
-          </div>
-          <img src="/images/2.png" alt="Slide 2" className={styles.mainImg} />
-        </SwiperSlide>
-
-        <SwiperSlide className={styles.swiperSlide} style={{ background: "linear-gradient(to bottom, #DAB1C8, #511990)" }}>
-          <div className={styles.info}>
-            <p>FALL 2023</p>
-            <span>@ Urban elegance <br /> meets innovation</span>
-            <p>MONCLER GENIUS</p>
-            <span>Bold, modern, <br /> and technical</span>
-          </div>
-          <div className={styles.pricing}>
-            <p>Color:</p>
-            <span>Blood Orange</span>
-            <h3>$1249.00</h3>
-            <div className={styles.btnBlock}>
-              <button className={styles.lightBtn}>Buy Now</button>
-              <button className={styles.btn}>Add To Cart</button>
-            </div>
-          </div>
-          <img src="/images/3.png" alt="Slide 3" className={styles.mainImg} />
-        </SwiperSlide>
-      </Swiper>
-
-      <div className={styles.swiperThumbs}>
-        <div className={styles.swiperWrapper}>
-          <div className={styles.swiperSlide}>
-            <img src="/images/1.png" alt="Thumbnail 1" />
-          </div>
-          <div className={styles.swiperSlide}>
-            <img src="/images/2.png" alt="Thumbnail 2" />
-          </div>
-          <div className={styles.swiperSlide}>
-            <img src="/images/3.png" alt="Thumbnail 3" />
-          </div>
-        </div>
-      </div>
-
+            <img src={slide.image} alt={`Slide ${index + 1}`} className={styles.mainImg} />
+          </SwiperSlide>
+        ))}
+      </Swiper> 
+      
       <div className={styles.scroll}>
         Scroll Down <i className="ri-arrow-down-s-line"></i>
       </div>
