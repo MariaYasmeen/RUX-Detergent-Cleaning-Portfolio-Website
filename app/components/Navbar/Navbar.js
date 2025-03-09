@@ -120,8 +120,9 @@ const Navbar = () => {
         
         <div className={styles.menuList}>
           <a href="#" className={styles.menuItem}>WHAT WE DO</a>
-          <a href="#" className={styles.menuItem}>ABOUT US</a>
+          <a href="#" className={styles.menuItem}>ABOUT US</a> 
           <a href="#" className={styles.menuItem}>PRODUCTS</a>
+          <a href="#" className={styles.menuItem}>JOIN OUR DISTRIBUTOR NETWORK</a> 
           <a href="#" className={styles.menuItem}>GET IN TOUCH</a>
         </div>
         
