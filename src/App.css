@@ -1,38 +1,128 @@
-.App {
-  text-align: center;
+*{
+  
+  font-family:'Times New Roman', Times, serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+.nav-css{ 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100; /* Ensure it's above everything */
+ }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* 🔹 First Page (Slider) is Fixed */
+.fixed-slider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  background-color: white; /* Ensure background is visible */
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+/* 🔹 Second Page (VideoSection) Scrolls Over */
+.scrolling-content {
+  position: relative;
+  z-index: 2;
+  margin-top: 100vh; 
+}
+
+/* 🔹 Smooth Scroll Effect */
+html, body {
+  scroll-behavior: smooth;
+}
+
+
+
+.btn-txt{
+  font-size: 14px;
+  margin-bottom: 15px; 
+  margin-right: 6px ;
+}
+
+.logo-img{
+  width: 88px;
+}
+
+/* Full-width container */
+.video-container {
+  padding: 50px 5%;
+}
+.videosec-ctr{
+  border-radius: 33px 33px 0px  0px;
+  background-color: #1d6dbd !important;
+
+}
+/* Left text section */
+.text-section {
+  padding: 20px;
+  text-align: left;
+  background-color: #1d6dbd !important;
+}
+
+.title {
   color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.subtitle {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Custom button */
+.explore-btn {
+  padding: 10px 33px;
+  font-size: 1rem; 
+  border: none;
+  border-radius: 0px;
+  background-color: green;
+}
+
+/* Right video section */
+.video-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive YouTube Video */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+/* Mobile-first: Stack sections vertically */
+@media (max-width: 768px) {
+  .text-section {
+    text-align: center;
+    margin-bottom: 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .video-section {
+    width: 100%;
   }
 }
+
+
+
+
