@@ -4,6 +4,8 @@ import AnimatedText from "../Components/AboutTxt";
 import CardSlider from "../Components/CardSlider";
 import VideoSection from "./VideoSection"; 
 import ImageSlider from "./ImageSlider";
+import WhyChooseUs from "./WhyChooseUs";
+import FAQs from "./FAQs";
   
 const Home = () => {
   return (
@@ -16,6 +18,8 @@ const Home = () => {
         <AnimatedText /> 
         <CardSlider /> 
         <ImageSlider />
+    <WhyChooseUs />
+    <FAQs />
       </div>
     </>
   );

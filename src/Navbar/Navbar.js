@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import styles from "./Navbar.module.scss"; 
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -119,7 +120,7 @@ const Navbar = () => {
         
         <div className={styles.menuList}>
           <a href="#" className={styles.menuItem}>WHAT WE DO</a>
-          <a href="#" className={styles.menuItem}>OUR PRODUCTS</a>
+          <Link to="/our-products" className={styles.menuItem}>OUR PRODUCTS</Link>
           <a href="#" className={styles.menuItem}>JOIN OUR DISTRIBUTOR NETWORK</a> 
           <a href="#" className={styles.menuItem}>CAREERS</a> 
           <a href="#" className={styles.menuItem}>GET IN TOUCH</a>

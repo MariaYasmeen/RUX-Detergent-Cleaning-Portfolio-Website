@@ -1,0 +1,134 @@
+/* Full Page Container */
+.category-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out;
+    position: relative;
+    overflow: hidden; /* No scrollbars */
+  }
+  
+   .sidebar {
+    width: 250px;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+     overflow: hidden; /* Prevents scrolling */
+  }
+  
+ /* Sidebar Buttons with Glass Effect */
+.category-button {
+    width: 90%; /* Responsive width */
+    max-width: 140px;
+    background: rgba(179, 169, 169, 0.2); /* Glass effect */
+    backdrop-filter: blur(10px); /* Frosted glass */
+    border: none; /* No border initially */
+    border-radius: 30px;
+    padding: 7px;
+    margin-bottom: 7px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid transparent; /* White border on hover */
+    color: white;
+    transition: background 0.3s, border 0.3s, transform 0.2s ease-in-out;
+  }
+  
+  /* Hover Effect */
+  .category-button:hover {
+    background: none; /* Fully transparent on hover */
+    border: 1px solid white; /* White border on hover */
+   }
+  
+  
+  /* Right-side Content */
+  .content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 60px;
+    text-align: center;
+    opacity: 1 !important;
+    transition: opacity 0.3s ease-in-out;
+  }
+ 
+  
+  /* Text & Button */
+  .content-text {
+    position: relative;
+    color: white;
+    z-index: 2;
+    text-align: center;
+  }
+  
+  .content-text h1 {
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  }
+  
+  .content-text p {
+    font-size: 18px;
+    margin: 10px 0;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+  }
+  
+  .cta-button {
+    background: #ff5733;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .cta-button:hover {
+    background: #c70039;
+  }
+  
+  /* 🔹 RESPONSIVE ADJUSTMENTS */
+  
+  /* Tablet View */
+  @media (max-width: 768px) {
+    .category-button {
+      width: 85%; /* Slightly smaller buttons */
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    .content {
+      padding: 40px;
+    }
+  
+    .content-text h1 {
+      font-size: 28px;
+    }
+  }
+  
+  /* Mobile View */
+  @media (max-width: 480px) {
+    .sidebar {
+      width: 180px; /* Smaller sidebar but stays on the left */
+      min-width: 180px;
+      padding: 10px;
+    }
+  
+    .category-button {
+      width: 90%; /* Adjusted width */
+      font-size: 12px; /* Smaller font */
+      padding: 6px 10px; /* Smaller padding */
+      margin-bottom: 8px;
+    }
+  
+    .content {
+      display: none; /* Hide right content */
+    }
+  }
+  
