@@ -218,7 +218,7 @@ const ImageSlider = () => {
         >
           <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/154/next.svg" alt="Next" />
         </button>
-      </fieldset>
+      </fieldset> 
     </div>
   );
 };
