@@ -6,6 +6,7 @@ import './App.css';
 import Navbar from './Navbar/Navbar';
 import Home from './Pages/Hero';
 import Category from './Product/Category';
+import ProdDesc from './Product/ProdDesc';
   
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
             <Routes>
             <Route path="/" element={<Home />} /> 
             <Route path="/our-products" element={<Category />} />  
+            <Route path="/our-products/:title" element={<ProdDesc />} />
+
           </Routes>
        </BrowserRouter>
    </>

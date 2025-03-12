@@ -1,135 +1,70 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
-import styles from "./Navbar.module.scss"; 
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const sidebarRef = useRef(null);
-  const navbarRef = useRef(null);
-
-  useEffect(() => {
-    // Initial navbar animation
-    gsap.fromTo(
-      navbarRef.current,
-      {
-        y: -100,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        ease: "power3.out",
-      }
-    );
-  }, []);
-
-  // Handle sidebar animation
-  useEffect(() => {
-    if (sidebarRef.current) {
-      if (isSidebarOpen) {
-        gsap.to(sidebarRef.current, {
-          x: 0,
-          duration: 0.6,
-          ease: "power3.out",
-        });
-      } else {
-        gsap.to(sidebarRef.current, {
-          x: "-100%",
-          duration: 0.6,
-          ease: "power3.out",
-        });
-      }
-    }
-  }, [isSidebarOpen]);
-
   return (
-    <>
-      <nav ref={navbarRef} className={styles.navbar}>
-        <div className={styles.container}>
-          <div className={styles.navContent}>
-            {/* Toggle Button */}
-            
+    <nav className="navbar navbar-expand-lg    ">
+      <div className="container-fluid">
+        
+        {/* Left Side - Menu Dropdown (Only visible on large screens) */}
+        <div className="dropdown d-none px-4 d-lg-block">
+          <button 
+            class="btn btn-sm btn-outline-secondary dropdown-toggle btn-css rounded-pill mx-1"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Menu
+          </button>
+          <ul className="dropdown-menu">
+          <li><a className="dropdown-item" href="#">WHAT WE DO</a></li>
+          <Link to="/our-products"><a className="dropdown-item" href="#">OUR PRODUCTS</a></Link>
+          <li><a className="dropdown-item" href="#">JOIN OUR DISTRIBUTOR NETWORK</a></li>
+              <li><a className="dropdown-item" href="#">BLOGS</a></li>
+              <li><a className="dropdown-item" href="#">GET IN TOUCH</a></li>
+          </ul>
+        </div>
+
+        {/* Center - Logo (Moves left on small screens) */}
+        <Link to="/"><a className="navbar-brand mx-lg-auto" href="#">
+       <img
+            src="/logo.png" // Replace with your logo
+            alt="Logo"
+            className="d-block"
+            style={{ height: "55px" }}
+          />
+        </a>
+        </Link> 
+
+        {/* Right Side - Buttons & Dropdown (On small screens, everything goes in dropdown) */}
+        <div className="d-lg-none">
+          <div className="dropdown">
             <button
-              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-              className={styles.toggleButton}
-              aria-label={isSidebarOpen ? "Close Sidebar" : "Open Sidebar"}
+              className="btn btn-outline-primary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
             >
-              <span>{isSidebarOpen ? "Close" : "Menu"}</span>
-              {isSidebarOpen ? (
-                <svg
-                  width="20"
-                  height="20"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  width="20"
-                  height="20"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              )}
+              ☰
             </button>
-
-            <div className={styles.logo}>
-  <image
-    src="./logo.png" // Path to your logo image
-    alt="RUX Agency Logo" // Alt text for accessibility
-    width={130} // Set the width of the logo
-    height={35} // Set the height of the logo
-    priority // Optional: Prioritize loading for above-the-fold content
-  />
-</div>
-
-            {/* Buttons */}
-            <div className={styles.buttonGroup}>
-              <button className={styles.loginButton}>
-                Become a Distributor
-              </button>
-              <button className={styles.signupButton}>
-                Sign Up
-              </button>
-            </div>
+            <ul className="dropdown-menu dropdown-menu-end">
+              <li><a className="dropdown-item" href="#">WHAT WE DO</a></li>
+              <Link to="/our-products"><a className="dropdown-item" href="#">OUR PRODUCTS</a></Link>
+              <li><a className="dropdown-item" href="#">JOIN OUR DISTRIBUTOR NETWORK</a></li>
+              <li><a className="dropdown-item" href="#">BLOGS</a></li>
+              <li><a className="dropdown-item" href="#">GET IN TOUCH</a></li>
+            </ul>
           </div>
         </div>
-      </nav>
 
-      {/* Sidebar */}
-      <div ref={sidebarRef} className={styles.sidebar}>
-        
-        <div className={styles.menuList}>
-          <a href="#" className={styles.menuItem}>WHAT WE DO</a>
-          <Link to="/our-products" className={styles.menuItem}>OUR PRODUCTS</Link>
-          <a href="#" className={styles.menuItem}>JOIN OUR DISTRIBUTOR NETWORK</a> 
-          <a href="#" className={styles.menuItem}>CAREERS</a> 
-          <a href="#" className={styles.menuItem}>GET IN TOUCH</a>
-        </div>
-        
+         <div className="d-none d-lg-flex gap-2 px-3">
+          <button class="btn btn-sm btn-outline-secondary btn-css rounded-pill mx-1">Become a Distributor</button>
+         </div>
       </div>
-      
-    </>
+    </nav>
   );
 };
 
-export default Navbar; 
+export default Navbar;

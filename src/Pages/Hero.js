@@ -6,14 +6,15 @@ import VideoSection from "./VideoSection";
 import ImageSlider from "./ImageSlider";
 import WhyChooseUs from "./WhyChooseUs";
 import FAQs from "./FAQs";
+import { Navbar } from "react-bootstrap";
   
 const Home = () => {
   return (
-    <> 
-       <div className="fixed-slider">
+    <>  
+       <div className="fixed- ">
         <Slider />
       </div>
-      <div className="scrolling-content">
+      <div className="scrolling- ">
         <VideoSection />
         <AnimatedText /> 
         <CardSlider /> 

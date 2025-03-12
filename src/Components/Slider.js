@@ -44,7 +44,7 @@ const ImageSlider = () => {
   return (
     <div className="slider-container">
       <div className="slider">
-        <img src={images[currentIndex].src} alt="Slide" className="slide-image" />
+        <img src={images[currentIndex].src} alt="Slide" className="slide-image  img-fluid" />
         <div className="text-overlay">
           <h2>{images[currentIndex].title}</h2>
           <p>{images[currentIndex].text}</p>

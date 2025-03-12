@@ -35,52 +35,36 @@ const WhyChooseUs = () => {
     });
   }, []);
 
-  // Card Data Array
   const cardData = [
-    {
-      image: "./icon1.png", // Replace with actual image URL
-      headline: "Cost Efficiency",
-      subheadline: "One of the most compelling reasons to use wholesale laundry detergent is the significant cost savings it offers.  ",
-    },
-    {
-      image: "./icon2.png", // Replace with actual image URL
-      headline: "Bulk Supply",
-      subheadline: "Wholesale laundry detergent suppliers often provide distributors with access to a consistent and ample supply of products.",
-    },
-    {
-      image: "./icon3.png", // Replace with actual image URL
-      headline: "Variety and Selection",
-      subheadline: "Wholesale suppliers typically offer a broader range of laundry detergent products, including different brands, formulations, and packaging sizes.",
-    },
-    {
-      image: "./icon4.png" , // Replace with actual image URL
-      headline: "Competitive Prices",
-      subheadline: "By purchasing laundry detergent wholesale, distributors can offer competitive pricing to their customers. ",
-    },
+    { image: "./icon1.png", headline: "Cost Efficiency", subheadline: "Save significantly by purchasing in bulk." },
+    { image: "./icon2.png", headline: "Bulk Supply", subheadline: "Get a consistent and ample supply of products." },
+    { image: "./icon3.png", headline: "Variety and Selection", subheadline: "Choose from a wide range of products and brands." },
+    { image: "./icon4.png", headline: "Competitive Prices", subheadline: "Offer competitive pricing to your customers." },
   ];
 
-  return (
-    <div className="why-choose-us-container d-flex flex-column justify-content-center min-vh-100">
+ return (
+    <div className="why-choose-us-container d-flex flex-column justify-content-center  ">
       {/* Heading and Subheading */}
-      <div className="text-center ">
-        <h3 ref={headingRef} className="display-4 py-4 text-white fw-bold">
-          Why Choose Us?
-        </h3>
-        <p ref={subheadingRef} className="lead text-white">
-          We provide the best services to meet your needs.
-        </p>
-      </div>
+      <div className="d-flex flex-column justify-content-center align-items-center py-4 text-center ">
+  <h3 ref={headingRef} className="display-6 text-white fw-bold">
+    Why Choose RUX Detergent Products?
+  </h3>
+  <p ref={subheadingRef} className="lead text-white px-4">
+    Our products not only pack the necessary punch needed to cut through tough stains and grease, but our 5-gallon concentrated formula will keep you cleaning longer and spending less.
+  </p>
+</div>
 
-      {/* Boxes Section */}
-      <div className="container ">
+ 
+         {/* Boxes Section */}
+      <div className="container py-4">
         <div className="row g-4">
           {/* Left Part: 4 Unique Cards */}
           <div className="col-md-8">
-            <div className="row g-3 cards-css">
+            <div className="row g-3">
               {cardData.map((card, index) => (
                 <div
                   key={index}
-                  className="col-md-6"
+                  className="col-12 col-sm-6"
                   ref={(el) => (boxRefs.current[index] = el)}
                 >
                   <div className="card h-100 p-4 shadow-sm text-center">
@@ -99,19 +83,24 @@ const WhyChooseUs = () => {
           </div>
 
           {/* Right Part: Bigger Box */}
-          <div className="col-md-4" ref={(el) => (boxRefs.current[4] = el)}>
-            <div className="card  card-width shadow-sm text-center">
+          <div
+            className="col-md-4 d-flex "
+            ref={(el) => (boxRefs.current[4] = el)}
+          >
+            <div className="card h-100 w-100 shadow-sm text-center d-flex flex-column justify-content-center align-items-center p-4">
               <img
-                src="./icon5.png" // Replace with actual image
+                src="./icon5.png"
                 alt="Big Icon"
                 className="mx-auto mb-3"
                 style={{ width: "100px", height: "100px" }}
               />
               <h3 className="card-title">Trusted Distributor Community</h3>
               <p className="card-text">
-              At Clean Bubbles we can give you the chance of becoming a distributor for our products. we can provide you the products in wholesale price, to give you the chance to sell it and earn a lot of money .
+                Become a distributor for our products and earn with wholesale
+                pricing.
               </p>
-              <button className="cta-btn ">Join Our Distributor Network</button>
+              <p>We sell our products all over the USA. Contact us for wholesale pricing or if you are interested in becoming an independent distributor.</p>
+              <button className="cta-btn mt-auto">Join Our Network</button>
             </div>
           </div>
         </div>
