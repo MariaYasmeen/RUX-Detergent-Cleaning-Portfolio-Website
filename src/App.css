@@ -9,6 +9,10 @@
   border: 0px; 
 }
  
+.navbarcss{
+  padding: 0px !important;
+  margin: 0px  !important;
+}
 
 .dropdown-css li{
   padding: 10px; 
