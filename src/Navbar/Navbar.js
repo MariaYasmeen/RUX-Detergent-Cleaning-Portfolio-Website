@@ -5,20 +5,20 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg    ">
-      <div className="container-fluid">
+    <nav className="navbar navbar-expand-lg ">
+      <div className="container-fluid ">
         
         {/* Left Side - Menu Dropdown (Only visible on large screens) */}
         <div className="dropdown d-none px-4 d-lg-block">
           <button 
-            class="btn btn-sm btn-outline-secondary dropdown-toggle btn-css rounded-pill mx-1"
+            class="btn btn-sm dropdown-toggle btn-css rounded-pill mx-1"
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
             Menu
           </button>
-          <ul className="dropdown-menu">
+          <ul className="dropdown-menu dropdown-css">
           <li><a className="dropdown-item" href="#">WHAT WE DO</a></li>
           <Link to="/our-products"><a className="dropdown-item" href="#">OUR PRODUCTS</a></Link>
           <li><a className="dropdown-item" href="#">JOIN OUR DISTRIBUTOR NETWORK</a></li>

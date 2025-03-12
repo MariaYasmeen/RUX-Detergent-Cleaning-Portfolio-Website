@@ -3,7 +3,16 @@
   font-family:Arial, Helvetica, sans-serif;
 }
 
+.dropdown-css{
+  padding: 17px;
+  text-decoration: none;
+  border: 0px; 
+}
+ 
 
+.dropdown-css li{
+  padding: 10px; 
+}
 .nav-css{ 
   position: fixed;
   top: 0;
