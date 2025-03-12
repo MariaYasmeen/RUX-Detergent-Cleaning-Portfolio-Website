@@ -12,6 +12,7 @@
 
 .dropdown-css li{
   padding: 10px; 
+  text-decoration: none !;
 }
 .nav-css{ 
   position: fixed;
