@@ -5,6 +5,7 @@ import "swiper/css"; // Import Swiper CSS
 import "swiper/css/navigation"; // Navigation buttons
 import "swiper/css/pagination"; // Pagination dots
 import "./CardSlider.css"; // Custom styles
+import AnimBtn from "./AnimBtn";
 
 const cards = [
   { id: 1, title: "Creative Design", text: "Bringing ideas to life", img: "/main1.png" },
@@ -18,6 +19,33 @@ const cards = [
 const CardSlider = () => {
   return (
     <>
+
+<div class="row d-flex text-center featurette align-items-center justify-content-center">
+      <div class="col-md-7 text-center px-3 d-flex flex-column justify-content-center">
+        <h2 class="featurette-heading fw-normal lh-1 py-4">Our Story: Built on Trust, Driven by Innovation
+        </h2>
+        <p class="lead ">At RUX, we’re on a mission to make cleaning easier, faster, and more sustainable. Whether you’re a busy homeowner or a business owner, our products are designed to save you time and effort while delivering unmatched results.</p>
+        <AnimBtn buttonName="explore products" 
+     path="/luxury-pret" />
+      </div>
+      <div class="col-md-5 py-2 justify-content-center align-items-center">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+      </div>
+    </div>
+
+    <div class="row d-flex text-center featurette align-items-center justify-content-center">
+    <div class="col-md-5 py-2">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+      </div>
+      <div class="col-md-7 text-center px-4 d-flex flex-column justify-content-center">
+      <h2 class="featurette-heading fw-normal lh-1 py-4">RUX a Wholesale detergent distributor
+        </h2>      <p class="lead ">In the ever-expanding world of consumer goods and household essentials, the distribution of laundry detergent plays a pivotal role. For independent bulk laundry distributors seeking opportunities in this lucrative market, one option stands out as particularly advantageous: wholesale purchasing.</p>
+        <AnimBtn buttonName="become dealer" 
+     path="/luxury-pret" />
+      </div>
+     
+      </div>
+
       <div className="swiper-container">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
@@ -45,14 +73,18 @@ const CardSlider = () => {
         ))}
       </Swiper>
 
+    
+
+
+
       
     </div>
      {/* ✅ Fix: Ensure Background Image is Properly Loaded */}
      <div className="imgctr">
      <img src="/main1.png" className="img-fluid page-img" style={{ backgroundColor: "white" }} alt="..." />
- 
- 
      </div>
+
+     
     
  </>
   

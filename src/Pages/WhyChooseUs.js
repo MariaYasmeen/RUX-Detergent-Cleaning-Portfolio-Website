@@ -45,7 +45,7 @@ const WhyChooseUs = () => {
  return (
     <div className="why-choose-us-container d-flex flex-column justify-content-center  ">
       {/* Heading and Subheading */}
-      <div className="d-flex flex-column justify-content-center align-items-center py-4 text-center ">
+      <div className="d-flex flex-column justify-content-center align-items-center  text-center " style={{marginTop:"20px"}}>
   <h3 ref={headingRef} className="display-6 text-white fw-bold">
     Why Choose RUX Detergent Products?
   </h3>
@@ -56,7 +56,7 @@ const WhyChooseUs = () => {
 
  
          {/* Boxes Section */}
-      <div className="container py-4">
+      <div className="container " style={{marginBottom:"40px"}}>
         <div className="row g-4">
           {/* Left Part: 4 Unique Cards */}
           <div className="col-md-8">
