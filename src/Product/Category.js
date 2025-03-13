@@ -5,7 +5,7 @@ import "./Product.css";
 const Category = () => {
   return (
     <>
-      <div className="container">
+      <div className="container caregoryctre-css">
         <header className="d-flex flex-wrap align-items-center justify-content-center py-1 mb-4">
           <ul className="nav d-flex flex-row flex-wrap py-1 justify-content-center gap-2">
             <li>

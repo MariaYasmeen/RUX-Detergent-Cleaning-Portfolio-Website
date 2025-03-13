@@ -83,7 +83,9 @@
   .buy-button:hover {
     background: gray;
   }
-  
+  .caregoryctre-css{
+    margin-top: 3.7%;
+  }
   .banner-img{
     border-radius: 55px !important;
     padding: 0px 30px 20px 30px; 

@@ -6,12 +6,11 @@ import VideoSection from "./VideoSection";
 import ImageSlider from "./ImageSlider";
 import WhyChooseUs from "./WhyChooseUs";
 import FAQs from "./FAQs";
-import { Navbar } from "react-bootstrap";
-  
+   
 const Home = () => {
   return (
     <>  
-       <div className="fixed- ">
+       <div className="slider-css">
         <Slider />
       </div>
       <div className="scrolling- ">
