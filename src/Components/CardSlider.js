@@ -17,7 +17,7 @@ const cards = [
 ];
 
 const CardSlider = () => {
-  return (
+  return (  
     <>
 
 <div class="row d-flex text-center featurette align-items-center justify-content-center">
