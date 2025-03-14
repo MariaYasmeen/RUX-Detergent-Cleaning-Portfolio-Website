@@ -79,6 +79,53 @@ const ImageSlider = () => {
     spawnBubble();
   };
 
+  const bubbleContainerRef = useRef(null);
+
+useEffect(() => {
+  if (!bubbleContainerRef.current) {
+    // Create bubbles only once
+    const bubbleContainer = document.createElement('div');
+    bubbleContainer.className = 'bubble-container';
+    bubbleContainer.style.position = 'absolute';
+    bubbleContainer.style.top = '0';
+    bubbleContainer.style.left = '0';
+    bubbleContainer.style.width = '100%';
+    bubbleContainer.style.height = '100%';
+    bubbleContainer.style.overflow = 'hidden';
+    canvasRef.current.appendChild(bubbleContainer);
+    bubbleContainerRef.current = bubbleContainer; // Store reference to avoid duplication
+
+    const spawnBubble = () => {
+      const bubble = document.createElement('div');
+      bubble.className = 'bubble';
+      bubble.style.position = 'absolute';
+      bubble.style.width = `${Math.random() * 40 + 10}px`; // Random size
+      bubble.style.height = bubble.style.width;
+      bubble.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
+      bubble.style.borderRadius = '50%';
+      bubble.style.bottom = `-${bubble.style.height}`; // Start below screen
+      bubble.style.left = `${Math.random() * 100}%`;
+
+      bubbleContainer.appendChild(bubble);
+
+      gsap.to(bubble, {
+        y: `-${window.innerHeight + parseFloat(bubble.style.height)}px`,
+        opacity: 0,
+        duration: Math.random() * 10 + 5,
+        ease: 'none',
+        onComplete: () => {
+          bubble.remove();
+        }
+      });
+
+      setTimeout(spawnBubble, Math.random() * 1000);
+    };
+
+    spawnBubble();
+  }
+}, []); // Empty dependency array ensures it runs only once
+
+
   useEffect(() => {
     // GSAP animations for title and image
     gsap.fromTo(titleRef.current, { opacity: 0, x: 50 }, { opacity: 1, x: 0, duration: 0.5 });
