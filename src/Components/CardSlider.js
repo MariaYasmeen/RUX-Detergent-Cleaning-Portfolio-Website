@@ -81,7 +81,7 @@ const CardSlider = () => {
     </div>
      {/* ✅ Fix: Ensure Background Image is Properly Loaded */}
      <div className="imgctr">
-     <img src="/main1.png" className="img-fluid page-img" style={{ backgroundColor: "white" }} alt="..." />
+     <img src="/main4.png" className="img-fluid page-img" style={{ backgroundColor: "white" }} alt="..." />
      </div>
 
      

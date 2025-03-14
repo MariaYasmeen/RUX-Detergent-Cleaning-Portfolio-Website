@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 
 function DNetwork() {
   const imageSources = [
@@ -7,7 +8,10 @@ function DNetwork() {
     "https://i.pinimg.com/736x/ac/ff/ff/acffff17e6e6e0fdd56dd83ca8b6eb44.jpg",
     "https://i.pinimg.com/736x/21/02/4c/21024c2dfe13f7a057dd0539f4faded7.jpg"
   ];
+  const formRef = useRef(null);
 
+  // GSAP Animation on Mount
+   
   return (
     <>
   <div
@@ -16,7 +20,7 @@ function DNetwork() {
     backgroundImage: "url('/bgimg.png')",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat", 
-    display: "flex",
+    display: "flex", 
     alignItems: "center",
     justifyContent: "center",
   }}
@@ -38,7 +42,7 @@ function DNetwork() {
 <div className="px-5 py-4" id="custom-cards">
   <h2 className="pb-2">Why Join Us?</h2>
 
-  <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3 py-4">
+  <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3 py-3">
     {[1, 2, 3, 4].map((num, index) => (
       <div className="col" key={index}>
         <div
@@ -100,85 +104,87 @@ function DNetwork() {
   </div>
 </div>
 
-
-
-  <div class="row g-5">
-    <div class="col-md-8">
-      <h3 class="pb-4 mb-4 fst-italic border-bottom">
-        From the Firehose
-      </h3>
-
- {/* start form ode fo9rm here */}
-      
-    
-      <nav class="blog-pagination" aria-label="Pagination">
-        <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
-        <a class="btn btn-outline-secondary rounded-pill disabled" aria-disabled="true">Newer</a>
-      </nav>
-
-    </div>
-
-    <div class="col-md-4">
-      <div class="position-sticky" style={{top: "2rem"}}>
-        <div class="p-4 mb-3 bg-body-tertiary rounded">
-           <article class="blog-post">
-        <h4 class="display-7 link-body-emphasis mb-1">Who Can Join?</h4>
-        <div class=" px-1" id="featured-3">
-    
-        <div class="d-flex flex-column flex-md-row   align-items-center ">
-  <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-      <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0" />
-      <div class="d-flex gap-2 w-100 justify-content-between">
-        <div>
-          <h6 class="mb-0">Have a proven track record in sales and distribution.</h6>
+<div className="container-fluid vh-100 d-flex justify-content-center align-items-center ht" style={{marginTop: '40px'}}>
+      <div
+        ref={formRef}
+        className="col-12 col-md-8 col-lg-6 p-4 bg-white rounded-4 shadow"
+        style={{ border: '1px solid rgba(0, 0, 0, 0.1)' }}
+      >
+        <h2 className="text-center py-3 text-primary">Distributor Registration Form</h2>
+        <form>
+          {/* Personal Information */}
+          <div className="mb-4">
+            <label htmlFor="fullName" className="form-label fw-medium">Full Name</label>
+            <input
+              type="text"
+              className="form-control border-0 border-bottom rounded-0"
+              id="fullName"
+              name="fullName"
+              placeholder="Enter your full name"
+              style={{ boxShadow: 'none' }}
+            />
           </div>
-        <small class="opacity-50 text-nowrap">now</small>
-      </div>
-    </a>
-    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-      <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0" />
-      <div class="d-flex gap-2 w-100 justify-content-between">
-        <div>
-          <h6 class="mb-0">Share our commitment to quality and customer satisfaction.</h6>
-         </div>
-        <small class="opacity-50 text-nowrap">3d</small>
-      </div>
-    </a>
-    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-      <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0" />
-      <div class="d-flex gap-2 w-100 justify-content-between">
-        <div>
-          <h6 class="mb-0">Are eager to grow their business with a trusted partner.</h6>
-         </div>
-        <small class="opacity-50 text-nowrap">1w</small>
-      </div>
-    </a>
-    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-      <img src="https://github.com/twbs.png" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0" />
-      <div class="d-flex gap-2 w-100 justify-content-between">
-        <div>
-          <h6 class="mb-0">Operate in regions where we are looking to expand our presence.
 
-.</h6>
-         </div>
-        <small class="opacity-50 text-nowrap">1w</small>
+          <div className="mb-4">
+            <label htmlFor="email" className="form-label fw-medium">Email Address</label>
+            <input
+              type="email"
+              className="form-control border-0 border-bottom rounded-0"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              style={{ boxShadow: 'none' }}
+            />
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="phone" className="form-label fw-medium">Phone Number</label>
+            <input
+              type="tel"
+              className="form-control border-0 border-bottom rounded-0"
+              id="phone"
+              name="phone"
+              placeholder="Enter your phone number"
+              style={{ boxShadow: 'none' }}
+            />
+          </div>
+
+          {/* Years of Experience */}
+          <div className="mb-4">
+            <label htmlFor="yearsOfExperience" className="form-label fw-medium">Years of Experience in Distribution</label>
+            <input
+              type="number"
+              className="form-control border-0 border-bottom rounded-0"
+              id="yearsOfExperience"
+              name="yearsOfExperience"
+              placeholder="Enter years of experience"
+              style={{ boxShadow: 'none' }}
+            />
+          </div>
+
+          {/* Additional Information */}
+          <div className="mb-4">
+            <label htmlFor="additionalInfo" className="form-label fw-medium">Additional Information</label>
+            <textarea
+              className="form-control border-0 border-bottom rounded-0"
+              id="additionalInfo"
+              name="additionalInfo"
+              placeholder="Any additional comments or information"
+              rows="4"
+              style={{ boxShadow: 'none' }}
+            />
+          </div>
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="btn btn-primary btn-lg w-100 rounded-3 fw-bold mt-3"
+          >
+            Submit
+          </button>
+        </form>
       </div>
-    </a>
-  </div>
-</div>
-
-  </div>
-        <hr />
-        </article>
-        </div>
-
-
-       
-         </div>
     </div>
-  </div>
-
 
     </>
   );

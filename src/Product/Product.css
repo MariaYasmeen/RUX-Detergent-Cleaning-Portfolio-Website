@@ -51,10 +51,64 @@
  
   .caregoryctre-css{
     margin-top: 4.9%;
-  }
-  .banner-img{
-    border-radius: 55px !important;
-    padding: 0px 30px 20px 30px; 
+  } 
+  .banner-img {
+    border-radius: 35px !important;
+    padding: 0px 30px 20px 30px;
     margin: 0px;
     border: 0px !important;
+    max-width: 100%;
+    height: auto;
   }
+
+
+  .product-card { 
+    overflow: hidden;
+    border-radius: 7px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    background-color: #f8f9fa;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+}
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 7px;
+}
+.product-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(163, 151, 151, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    display: flex;
+    margin: 4px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 15px 15px;
+}
+.product-card-overlay h7{
+  font-size: 13px;
+}
+.product-card-overlay p{
+  font-size: 13px;
+}
+.btn-soft {
+    border-radius: 30px;
+    padding: 6px 15px;
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.btn-soft i {
+    font-size: 14px;
+}
+ 

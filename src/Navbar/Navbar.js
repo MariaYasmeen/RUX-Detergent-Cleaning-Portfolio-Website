@@ -50,9 +50,8 @@ const Navbar = () => {
           <ul className="dropdown-menu dropdown-css">
             <Link to="/about"><li><a className="dropdown-item" href="#">WHAT WE DO</a></li></Link>
             <Link to="/our-products"><li><a className="dropdown-item" href="#">OUR PRODUCTS</a></li></Link>
-            <Link to="/distributor-network"><li><a className="dropdown-item" href="#">JOIN OUR DEALERS NETWORK</a></li></Link>
-            <Link to="/blogs"><li><a className="dropdown-item" href="#">BLOGS</a></li></Link>
-            <Link to="/contact"><li><a className="dropdown-item" href="#">GET IN TOUCH</a></li></Link>
+            <Link to="/dealer-network"><li><a className="dropdown-item" href="#">JOIN OUR DEALERS NETWORK</a></li></Link>
+             <Link to="/contact"><li><a className="dropdown-item" href="#">GET IN TOUCH</a></li></Link>
           </ul>
         </div>
 
@@ -70,18 +69,17 @@ const Navbar = () => {
             <ul className="dropdown-menu dropdown-menu-end">
               <Link to="/about"><li><a className="dropdown-item" href="#">WHAT WE DO</a></li></Link>
               <Link to="/our-products"><li><a className="dropdown-item" href="#">OUR PRODUCTS</a></li></Link>
-              <Link to="/distributor-network"><li><a className="dropdown-item" href="#">JOIN OUR DEALERS NETWORK</a></li></Link>
-              <Link to="/blogs"><li><a className="dropdown-item" href="#">BLOGS</a></li></Link>
-              <Link to="/contact"><li><a className="dropdown-item" href="#">GET IN TOUCH</a></li></Link>
+              <Link to="/dealer-network"><li><a className="dropdown-item" href="#">JOIN OUR DEALERS NETWORK</a></li></Link>
+               <Link to="/contact"><li><a className="dropdown-item" href="#">GET IN TOUCH</a></li></Link>
             </ul>
           </div>
         </div>
 
         {/* Right Side - Distributor Button */}
         <div className="d-none d-lg-flex gap-2 px-3">
-          <button className="btn btn-sm btn-outline-secondary btn-css rounded-pill mx-1">
-            Become a Distributor
-          </button>
+        <Link to="/dealer-network">     <button className="btn btn-sm btn-outline-secondary btn-css rounded-pill mx-1">
+         Become a Distributor
+          </button></Link>
         </div>
       </div>
     </nav>
