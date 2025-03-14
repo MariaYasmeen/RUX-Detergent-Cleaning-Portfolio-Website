@@ -69,7 +69,7 @@ const FAQs = () => {
               style={{ cursor: "pointer" }}
             >
               <h5 className="mb-0 text-white">{faq.question}</h5>
-              <span className="icon text-white  ">{openIndexes[index] ? "▲" : "▼"}</span>
+              <span className="icon text-white">{openIndexes[index] ? "▲" : "▼"}</span>
             </div>
             <div ref={(el) => (answerRefs.current[index] = el)} className="accordion-body p-1">
               <p className="mb-0 text-white">{faq.answer}</p>

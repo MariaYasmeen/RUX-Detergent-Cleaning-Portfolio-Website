@@ -1,11 +1,15 @@
 import React, { useEffect, useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react"; // Import Swiper components
-import { Navigation, Pagination, Autoplay } from "swiper/modules"; // Import Swiper modules
-import "swiper/css"; // Import Swiper CSS
-import "swiper/css/navigation"; // Navigation buttons
-import "swiper/css/pagination"; // Pagination dots
-import "./CardSlider.css"; // Custom styles
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "./CardSlider.css";
 import AnimBtn from "./AnimBtn";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const cards = [
   { id: 1, title: "Creative Design", text: "Bringing ideas to life", img: "/main1.png" },
@@ -17,77 +21,107 @@ const cards = [
 ];
 
 const CardSlider = () => {
-  return (  
+  const textRefs = useRef([]);
+  const imgRefs = useRef([]);
+
+  useEffect(() => {
+    textRefs.current.forEach((text, index) => {
+      gsap.fromTo(
+        text,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: text,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+
+    imgRefs.current.forEach((img, index) => {
+      gsap.fromTo(
+        img,
+        { opacity: 0, scale: 0.8 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: img,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+  }, []);
+
+  return (
     <>
-
-<div class="row d-flex text-center featurette align-items-center justify-content-center">
-      <div class="col-md-7 text-center px-3 d-flex flex-column justify-content-center">
-        <h2 class="featurette-heading fw-normal lh-1 py-4">Our Story: Built on Trust, Driven by Innovation
-        </h2>
-        <p class="lead ">At RUX, we’re on a mission to make cleaning easier, faster, and more sustainable. Whether you’re a busy homeowner or a business owner, our products are designed to save you time and effort while delivering unmatched results.</p>
-        <AnimBtn buttonName="explore products" 
-     path="/luxury-pret" />
-      </div>
-      <div class="col-md-5 py-2 justify-content-center align-items-center">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
-      </div>
-    </div>
-
-    <div class="row d-flex text-center featurette align-items-center justify-content-center">
-    <div class="col-md-5 py-2">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
-      </div>
-      <div class="col-md-7 text-center px-4 d-flex flex-column justify-content-center">
-      <h2 class="featurette-heading fw-normal lh-1 py-4">RUX a Wholesale detergent distributor
-        </h2>      <p class="lead ">In the ever-expanding world of consumer goods and household essentials, the distribution of laundry detergent plays a pivotal role. For independent bulk laundry distributors seeking opportunities in this lucrative market, one option stands out as particularly advantageous: wholesale purchasing.</p>
-        <AnimBtn buttonName="become dealer" 
-     path="/luxury-pret" />
-      </div>
-     
+      {/* Section 1 */}
+      <div className="row d-flex text-center p-3 featurette align-items-center justify-content-center flex-column-reverse flex-md-row">
+        <div className="col-md-7 text-center p-3 d-flex flex-column justify-content-center" ref={(el) => (textRefs.current[0] = el)}>
+          <h2 className="featurette-heading fw-normal lh-1 py-4">Our Story: Built on Trust, Driven by Innovation</h2>
+          <p className="lead">At RUX, we’re on a mission to make cleaning easier, faster, and more sustainable.</p>
+          <AnimBtn buttonName="Explore Products" path="/our-products" />
+        </div>
+        <div className="col-md-5 py-2 d-flex justify-content-center" ref={(el) => (imgRefs.current[0] = el)}>
+          <img src="/1.png" className="img-fluid page-img" style={{ backgroundColor: "white" }} alt="..." />
+        </div>
       </div>
 
+      {/* Section 2 */}
+      <div className="row d-flex p-3 text-center featurette align-items-center justify-content-center flex-column flex-md-row">
+        <div className="col-md-5 py-2 d-flex justify-content-center" ref={(el) => (imgRefs.current[1] = el)}>
+          <img src="/2.png" className="img-fluid page-img" style={{ backgroundColor: "white" }} alt="..." />
+        </div>
+        <div className="col-md-7 text-center px-4 d-flex flex-column justify-content-center" ref={(el) => (textRefs.current[1] = el)}>
+          <h2 className="featurette-heading fw-normal lh-1 py-4">RUX: A Wholesale Detergent Distributor</h2>
+          <p className="lead">For independent bulk laundry distributors, wholesale purchasing is the key to success.</p>
+          <AnimBtn buttonName="Become Dealer" path="/dealer-network" />
+        </div>
+      </div>
+
+      {/* Swiper Slider */}
       <div className="swiper-container">
-      <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
-        slidesPerView={3} // Show 3 cards at a time
-        spaceBetween={20} // Add space between slides
-        navigation={true} // Enable next/prev buttons
-        pagination={{ clickable: true }} // Enable pagination dots
-        autoplay={{ delay: 3000 }} // Auto-slide every 3 seconds
-        breakpoints={{
-          320: { slidesPerView: 1 }, // 1 card for mobile
-          768: { slidesPerView: 2 }, // 2 cards for tablets
-          1024: { slidesPerView: 3 }, // 3 cards for desktops
-        }}
-      >
-        {cards.map((card) => (
-          <SwiperSlide key={card.id}>
-            <div className="big-card">
-              <img src={card.img} className="big-card-img" alt={card.title} />
-              <div className="big-card-body">
-                <h5 className="card-title">{card.title}</h5>
-                <p className="card-text">{card.text}</p>
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          slidesPerView={3}
+          spaceBetween={20}
+          navigation={true}
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 3000 }}
+          breakpoints={{
+            320: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+        >
+          {cards.map((card) => (
+            <SwiperSlide key={card.id}>
+              <div className="big-card">
+                <img src={card.img} className="big-card-img" alt={card.title} />
+                <div className="big-card-body">
+                  <h5 className="card-title">{card.title}</h5>
+                  <p className="card-text">{card.text}</p>
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
 
-    
-
-
-
-      
-    </div>
-     {/* ✅ Fix: Ensure Background Image is Properly Loaded */}
-     <div className="imgctr">
-     <img src="/main4.png" className="img-fluid page-img" style={{ backgroundColor: "white" }} alt="..." />
-     </div>
-
-     
-    
- </>
-  
+      {/* Background Image Section */}
+      <div className="imgctr" ref={(el) => (imgRefs.current[2] = el)}>
+        <img src="/main4.png" className="img-fluid page-img" style={{ backgroundColor: "white" }} alt="..." />
+      </div>
+    </>
   );
 };
 

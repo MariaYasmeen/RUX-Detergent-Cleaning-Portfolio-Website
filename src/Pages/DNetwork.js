@@ -104,16 +104,16 @@ function DNetwork() {
   </div>
 </div>
 
-<div className="container-fluid vh-100 d-flex justify-content-center align-items-center ht" style={{marginTop: '40px'}}>
+<div className="container-fluid vh-100 d-flex justify-content-center align-items-center ht" style={{marginTop: '200px'}}>
       <div
         ref={formRef}
-        className="col-12 col-md-8 col-lg-6 p-4 bg-white rounded-4 shadow"
+        className="col-12 col-md-8 col-lg-6 p-5 bg-white rounded-3 shadow"
         style={{ border: '1px solid rgba(0, 0, 0, 0.1)' }}
       >
         <h2 className="text-center py-3 text-primary">Distributor Registration Form</h2>
         <form>
           {/* Personal Information */}
-          <div className="mb-4">
+          <div className="mb-4 ">
             <label htmlFor="fullName" className="form-label fw-medium">Full Name</label>
             <input
               type="text"
@@ -148,6 +148,31 @@ function DNetwork() {
               style={{ boxShadow: 'none' }}
             />
           </div>
+
+          <div className="mb-4">
+            <label htmlFor="BusinessName" className="form-label fw-medium">Business Name</label>
+            <input
+              type="text"
+              className="form-control border-0 border-bottom rounded-0"
+              id="fullName"
+              name="fullName"
+              placeholder="Enter your Business name"
+              style={{ boxShadow: 'none' }}
+            />
+          </div>
+
+          <div className="mb-4">
+            <label htmlFor="location" className="form-label fw-medium">Location</label>
+            <input
+              type="text"
+              className="form-control border-0 border-bottom rounded-0"
+              id="fullName"
+              name="fullName"
+              placeholder="Enter your location"
+              style={{ boxShadow: 'none' }}
+            />
+          </div>
+
 
           {/* Years of Experience */}
           <div className="mb-4">

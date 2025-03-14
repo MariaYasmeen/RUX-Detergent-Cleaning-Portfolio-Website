@@ -1,7 +1,7 @@
 import React from "react";
 import "../Product/Product.css";
 
-const ProductCard = ({ image, title, subtitle, price }) => {
+const ProductCard = ({ image, title, price }) => {
   return (
     <div className="col-md-6 col-lg-4 col-xl-4 mb-4">
       <div
@@ -18,8 +18,7 @@ const ProductCard = ({ image, title, subtitle, price }) => {
          <div class="product-card-overlay">
                     <div>
                         <h7 class="text-uppercase fw-bold mb-1">{title}</h7>
-                        <p class="  mb-1">{subtitle}</p>
-                        <p class="text-muted m-0">FROM ${price}</p>
+                         <p class="text-muted m-0">FROM ${price}</p>
                     </div>
                     <button class="btn btn-outline-dark btn-soft">
                         <i class="fas fa-shopping-cart"></i>Quick View

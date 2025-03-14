@@ -1,11 +1,11 @@
 import React from "react";
-  
+
 const VideoSection = () => {
   return (
     <div className="container-fluid videosec-ctr video-container">
-      <div className="row align-items-center ">
+      <div className="row align-items-center">
         {/* Left Portion - Text Content */}
-        <div className="col-md-4 text-section">
+        <div className="col-md-4 text-section text-center text-md-start">
           <h2 className="title">Explore the Future</h2>
           <p className="subtitle">
             Discover the latest innovations and trends in technology.
@@ -14,14 +14,13 @@ const VideoSection = () => {
         </div>
 
         {/* Right Portion - Embedded YouTube Video */}
-        <div className="col-md-8 video-section">
-          <div className="video-wrapper">
+        <div className="col-md-8 video-section position-relative">
+          <div className="video-wrapper position-relative w-100" style={{ paddingTop: "56.25%" }}>
             <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              className="position-absolute top-0 start-0 w-100 h-100"
+              src="https://www.youtube.com/embed/f0nxKTqXe_s?autoplay=1&loop=1&playlist=f0nxKTqXe_s&controls=0&mute=1&modestbranding=1&showinfo=0&rel=0"
               title="YouTube Video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="autoplay; encrypted-media; fullscreen"
               allowFullScreen
             ></iframe>
           </div>
