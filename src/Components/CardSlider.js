@@ -12,12 +12,12 @@ import AnimBtn from "./AnimBtn";
 gsap.registerPlugin(ScrollTrigger);
 
 const cards = [
-  { id: 1, title: "Creative Design", text: "Bringing ideas to life", img: "/main1.png" },
-  { id: 2, title: "Modern Tech", text: "Innovation at its best", img: "/main2.png" },
-  { id: 3, title: "Future Ready", text: "Solutions for tomorrow", img: "/main3.png" },
-  { id: 4, title: "Smart Solutions", text: "Innovate your future", img: "/main4.png" },
-  { id: 5, title: "Creative Vision", text: "Think beyond limits", img: "/main5.png" },
-  { id: 6, title: "Modern Lifestyle", text: "Bringing tech to life", img: "/main6.png" },
+  { id: 1, title: "Dishwashing Detergents", text: "For cleaning dishes, cutlery, and kitchen utensils", img: "/slide1.png" },
+  { id: 2, title: "Multi-Surface Cleaners", text: "Cleaner suitable for various surfaces.", img: "/slide2.png" },
+  { id: 3, title: " Laundry Detergents", text: "Designed for washing clothes.", img: "/slide3.png" },
+  { id: 4, title: "Bleach and Stain Removers", text: "Used for whitening clothes, disinfecting surfaces, and removing tough stains.", img: "/slide4.png" },
+  { id: 5, title: "Specialty Cleaners", text: "Likely a specialized detergent, possibly for specific cleaning tasks", img: "/slide5.png" },
+  { id: 6, title: "Toilet and Bathroom Cleaners", text: "Specifically formulated for cleaning and disinfecting toilet bowls.", img: "/slide3.png" },
 ];
 
 const CardSlider = () => {
@@ -65,7 +65,7 @@ const CardSlider = () => {
   return (
     <>
       {/* Section 1 */}
-      <div className="row d-flex text-center p-3 featurette align-items-center justify-content-center flex-column-reverse flex-md-row">
+      <div className="row d-flex text-center p-3 featurette align-items-center justify-content-center flex-column-reverse flex-md-row" >
         <div className="col-md-7 text-center p-3 d-flex flex-column justify-content-center" ref={(el) => (textRefs.current[0] = el)}>
           <h2 className="featurette-heading fw-normal lh-1 py-4">Our Story: Built on Trust, Driven by Innovation</h2>
           <p className="lead">At RUX, we’re on a mission to make cleaning easier, faster, and more sustainable.</p>

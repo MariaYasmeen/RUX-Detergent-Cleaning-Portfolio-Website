@@ -6,28 +6,44 @@ const ImageSlider = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const steps = [
     {
-      image: "./4.png",
-      title: "Bananas",
-      headline: "Fresh Bananas",
-      subheadline: "Delicious and Nutritious",
-      buttonText: "Learn More",
-      bgColor: "#2A93BC"
+      image: "./slide1.png",
+      title: "Dishwashing Detergents",
+      headline: "Dishwashing Detergents",
+      subheadline: "Used for cleaning dishes, cutlery, and kitchen utensils.",
+      buttonText: "View Detergents",
+      bgColor: "#00b4d8"
     },
     {
-      image: "5.png",
-      title: "Coconut",
-      headline: "Tropical Coconut",
-      subheadline: "Refreshing and Healthy",
-      buttonText: "Explore",
-      bgColor: "#6BC85E"
+      image: "slide2.png",
+      title: "Bleach and Stain Removers",
+      headline: "Bleach and Stain Removers",
+      subheadline: "Used for whitening clothes, disinfecting surfaces, and removing tough stains.",
+      buttonText: "Explore Detergents",
+      bgColor: "#6f1d1b"
     },
     {
-      image: "./6.png",
-      title: "Orange",
-      headline: "Juicy Oranges",
-      subheadline: "Vitamin C Powerhouse",
-      buttonText: "Discover",
-      bgColor: "#45367E"
+      image: "./slide3.png",
+      title: "Multi-Surface Cleaners",
+      headline: "Multi-Surface Cleaners",
+      subheadline: "A versatile cleaner suitable for various surfaces.",
+      buttonText: "Discover Cleaners",
+      bgColor: "#bb3e03"
+    },
+    {
+      image: "./slide5.png",
+      title: "Toilet and Bathroom Cleaners",
+      headline: "Toilet and Bathroom Cleaners.",
+      subheadline: "Specifically formulated for cleaning and disinfecting toilet bowls.",
+      buttonText: "Explore Cleaners",
+      bgColor: "#70e000"
+    },
+    {
+      image: "./slide4.png",
+      title: "Laundry Detergents",
+      headline: "Laundry Detergents",
+      subheadline: "Designed for washing clothes",
+      buttonText: "Explore Detergents",
+      bgColor: "#9d4edd"
     }
   ];
 
@@ -196,18 +212,18 @@ useEffect(() => {
             <h2 ref={titleRef} className="title" style={{ margin: '20px 0 10px', opacity: 0 }}>
               {steps[currentStep].headline}
             </h2>
-            <p style={{ margin: '0 0 20px', opacity: 18, transition: 'opacity 0.5s' }} className="seq-in">
+            <p style={{ margin: '0 0 20px', opacity: 18, transition: 'opacity 0.5s' }} className="text-white seq-in">
               {steps[currentStep].subheadline}
             </p>
             <button
               style={{
-                padding: '10px 20px',
+                padding: '6px 20px',
                 backgroundColor: 'white',
                 border: 'none',
-                borderRadius: '5px',
+                borderRadius: '19px',
                 cursor: 'pointer',
                 opacity: 12,
-                transition: 'opacity 0.5s'
+                transition: 'opacity 0.9s'
               }}
               className="seq-in"
             >
@@ -252,54 +268,60 @@ useEffect(() => {
         </button>
 
         <ul
-          className="seq-pagination d-flex justify-content-center align-items-center"
-          style={{ display: 'inline-block', verticalAlign: 'middle', margin: '0 1em', padding: 0 }}
+  className="seq-pagination d-flex justify-content-center align-items-center"
+  style={{ display: 'inline-block', verticalAlign: 'middle', margin: '0 1em', padding: 0 }}
+>
+  {Array.isArray(steps) && steps.length > 0 ? (
+    steps.map((step, index) => (
+      <li
+        key={index}
+        style={{
+          display: 'inline-block',
+          verticalAlign: 'middle',
+          width: '50px',
+          height: '40px',
+          margin: '0 0.25em',
+          position: 'relative'
+        }}
+      >
+        <a
+          href={`#step${index + 1}`}
+          onClick={(e) => goToStep(index, e)}
+          style={{ display: 'block', border: 'none' }}
         >
-          {steps.map((step, index) => (
-            <li
-              key={index}
-              style={{
-                display: 'inline-block',
-                verticalAlign: 'middle',
-                width: '50px',
-                height: '40px',
-                margin: '0 0.25em',
-                position: 'relative'
-              }}
-            >
-              <a
-                href={`#step${index + 1}`}
-                onClick={(e) => goToStep(index, e)}
-                style={{ display: 'block', border: 'none' }}
-              >
-                <img
-                  src={`https://s3-us-west-2.amazonaws.com/s.cdpn.io/154/tn-${step.title.toLowerCase()}@2x.png`}
-                  alt={step.title}
-                  width="50"
-                  height="40"
-                />
-              </a>
-              {index === currentStep && (
-                <div
-                  style={{
-                    content: '""',
-                    display: 'block',
-                    position: 'absolute',
-                    top: '100%',
-                    left: '50%',
-                    width: '6px',
-                    height: '6px',
-                    marginLeft: '-3px',
-                    marginTop: '0.5em',
-                    borderRadius: '50%',
-                    backgroundColor: 'white',
-                    opacity: 0.7
-                  }}
-                ></div>
-              )}
-            </li>
-          ))}
-        </ul>
+          <img
+            src={step.image} // Now correctly using the main image
+            alt={step.title}
+            width="50"
+            height="40"
+            style={{ objectFit: 'cover', borderRadius: '5px' }}
+          />
+        </a>
+        {index === currentStep && (
+          <div
+            style={{
+              content: '""',
+              display: 'block',
+              position: 'absolute',
+              top: '100%',
+              left: '50%',
+              width: '6px',
+              height: '6px',
+              marginLeft: '-3px',
+              marginTop: '0.5em',
+              borderRadius: '50%',
+              backgroundColor: 'white',
+              opacity: 0.7
+            }}
+          ></div>
+        )}
+      </li>
+    ))
+  ) : (
+    <p>No steps available</p>
+  )}
+</ul>
+
 
         <button
           type="button"

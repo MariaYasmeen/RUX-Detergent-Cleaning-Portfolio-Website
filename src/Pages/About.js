@@ -41,8 +41,8 @@ function About() {
   return (
     <>
     
-    <div>
-      <img className='img-fluid' src='/mainbg.png'></img>
+    <div className="py-3" >
+      <img className='img-fluid py-5 px-4 ' src='/mainbg.png' ></img>
     </div>
     <div className="container my-5 w-100">
       <div className="row align-items-center">

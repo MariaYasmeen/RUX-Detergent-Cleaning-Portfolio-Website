@@ -15,7 +15,7 @@ const ProductCard = ({ image, title, price }) => {
         }}
       >
         {/* Bottom-fixed content container */}
-         <div class="product-card-overlay">
+         <div class="product-card-overlay px-4">
                     <div>
                         <h7 class="text-uppercase fw-bold mb-1">{title}</h7>
                          <p class="text-muted m-0">FROM ${price}</p>
