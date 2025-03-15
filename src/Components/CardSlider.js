@@ -68,7 +68,7 @@ const CardSlider = () => {
       <div className="row d-flex text-center p-3 featurette align-items-center justify-content-center flex-column-reverse flex-md-row" >
         <div className="col-md-7 text-center p-3 d-flex flex-column justify-content-center" ref={(el) => (textRefs.current[0] = el)}>
           <h2 className="featurette-heading fw-normal lh-1 py-4">Our Story: Built on Trust, Driven by Innovation</h2>
-          <p className="lead">At RUX, we’re on a mission to make cleaning easier, faster, and more sustainable.</p>
+          <p className="lead">At RUX, we’re on a mission to make cleaning easier, faster, and more sustainable. From kitchens to bathrooms, homes to businesses, RUX detergents are engineered for one purpose: effortless results. </p>
           <AnimBtn buttonName="Explore Products" path="/our-products" />
         </div>
         <div className="col-md-5 py-2 d-flex justify-content-center" ref={(el) => (imgRefs.current[0] = el)}>
@@ -83,7 +83,7 @@ const CardSlider = () => {
         </div>
         <div className="col-md-7 text-center px-4 d-flex flex-column justify-content-center" ref={(el) => (textRefs.current[1] = el)}>
           <h2 className="featurette-heading fw-normal lh-1 py-4">RUX: A Wholesale Detergent Distributor</h2>
-          <p className="lead">For independent bulk laundry distributors, wholesale purchasing is the key to success.</p>
+          <p className="lead">For independent bulk laundry distributors, wholesale purchasing is the key to success. As a RUX distributor, you’re not just selling detergents; you’re delivering solutions that homes and businesses rely on daily.</p>
           <AnimBtn buttonName="Become Dealer" path="/dealer-network" />
         </div>
       </div>

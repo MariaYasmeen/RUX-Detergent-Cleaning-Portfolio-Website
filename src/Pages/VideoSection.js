@@ -7,9 +7,10 @@ const VideoSection = () => {
         {/* Left Portion - Text Content */}
         <div className="col-md-4 text-section text-center text-md-start">
           <h2 className="title">Explore the Future</h2>
-          <p className="subtitle">
-            Discover the latest innovations and trends in technology.
+          <p className=" abtdesc">
+          At RUX, we don’t just clean surfaces—we transform spaces. Born from a mission to make powerful cleaning accessible, our seven specialized detergents tackle everything from stubborn kitchen grease to sun-stained laundry. 
           </p>
+          <p className=" abtdesc">Backed by science and crafted for sustainability, every bottle is a promise: your trust is our formula.</p>
           <button className="btn btn-primary explore-btn">Learn More</button>
         </div>
 

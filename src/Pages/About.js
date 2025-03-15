@@ -4,7 +4,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";  
 import Footer from "../Components/Footer"; 
-import Testimonials from "../Components/ClientTestimonial";
 
 function About() {
   useEffect(() => {
@@ -45,7 +44,7 @@ function About() {
 
       {/* Core Services Section */}
       <div className="container px-4 py-5 fade-in">
-        <h2 className="  border-bottom">OUR CORE SERVICES INCLUDE</h2>
+        <h2 className="pb-2 border-bottom">OUR CORE SERVICES INCLUDE</h2>
         <div className="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
           <div className="col">
             <h2>Our Core Services Include</h2>
@@ -66,8 +65,7 @@ function About() {
           </div>
         </div>
       </div>
-
-       <Testimonials />
+ s
 
       <Footer />
     </>
