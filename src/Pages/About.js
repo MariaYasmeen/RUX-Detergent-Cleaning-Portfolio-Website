@@ -30,9 +30,9 @@ function About() {
       </div>
 
       {/* About Section */}
-      <div className="container my-5 w-100 fade-in">
+      <div className="container my-5 w-100 fade-in p-3">
         <div className="row align-items-center">
-          <div className="col-md-6 text-md-start text-center">
+          <div className="col-md-6 text-md-start text-center p-3">
             <h2 className="fw-bold">About RUX</h2>
             <p>RUX is a wholesale company that believes in quality and quantity at an affordable price.</p>
             <p>From kitchens to bathrooms, homes to businesses, RUX detergents are engineered for one purpose: effortless results. Our pH-balanced formulas protect surfaces while annihilating grime, and our eco-friendly ingredients ensure safety for families and the planet. No harsh chemicals, no empty claims—just clean that speaks for itself.</p>
