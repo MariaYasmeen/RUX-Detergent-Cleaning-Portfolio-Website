@@ -5,7 +5,7 @@ const Footer = () => {
     <footer
       className="text-white pt-5 pb-4"
       style={{
-        backgroundColor: "rgb(87, 174, 255)",
+        backgroundColor: "rgb(67, 164, 255)",
         borderRadius: "60px 60px 0px 0px",
         marginTop: "100px",
       }}
@@ -81,7 +81,7 @@ const Footer = () => {
         <div className="text-center fs-5">
           <p className="mb-0">Copyright © 2025. All rights reserved.</p>
           <p className="mb-0">
-            Designed by <a href="https://mariayaasmeen.web.app/" className="text-warning text-decoration-none">Maria Yasmeen</a>
+            Designed & Developed by <a href="https://mariayaasmeen.web.app/" className="text-warning text-decoration-none">Maria Yasmeen</a>
           </p>
         </div>
       </div>

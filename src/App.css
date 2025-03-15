@@ -22,7 +22,16 @@
   background-color: #f0f0f0; /* Light gray track */
 }
 
-
+.underline {
+  display: block;
+  width: 0%; /* Starts with zero width */
+  height: 2px;
+  background-color: #007bff; /* Blue color */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: width 0.3s ease-out;
+}
 
 
 .dropdown-css{
