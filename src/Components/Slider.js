@@ -4,24 +4,26 @@ import "./Components.css";
 const images = [
   {
     src: "./main1.png",
-    title: "Creative Ideas",
-    text: "Bringing imagination to life.",
-  },
-  {
-    src: "./main2.png",
-    title: "Innovative Designs",
-    text: "Turning visions into reality.",
-  },
-  {
-    src: "./main5.png",
-    title: "Your Success, Our Mission",
-    text: "Designing for the future.",
+    title: "Laundry Detergents",
+    text: "Designed for washing clothes",
   },
   {
     src: "./main6.png",
-    title: "Your Success, Our Mission",
-    text: "Designing for the future.",
+    title: "Bleach and Stain Removers",
+    text: "Used for whitening clothes, disinfecting surfaces, and removing tough stains.",
   },
+  {
+    src: "./main5.png",
+    title: "Multi-Surface Cleaners",
+    text: "A versatile cleaner suitable for various surfaces.",
+  },
+  {
+    src: "./main2.png",
+    title: "Bleach and Stain Removers",
+    text: "Used for whitening clothes, disinfecting surfaces, and removing tough stains.",
+  },
+
+
 ];
 
 const ImageSlider = () => {

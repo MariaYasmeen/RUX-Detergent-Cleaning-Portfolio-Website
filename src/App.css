@@ -22,6 +22,15 @@
   background-color: #f0f0f0; /* Light gray track */
 }
 
+/* Remove background color change on dropdown button click */
+.dropdown-toggle:focus, 
+.dropdown-toggle:active,
+.show > .dropdown-toggle {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
 .underline {
   display: block;
   width: 0%; /* Starts with zero width */
@@ -83,6 +92,23 @@
 /* 🔹 Smooth Scroll Effect */
 html, body {
   scroll-behavior: smooth;
+}
+
+.slider-css {
+  position: fixed; /* Keeps the slider at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Full screen */
+  z-index: 1; /* Keeps it in view but below scrolling content */
+  background: white; /* Add background to ensure visibility */
+}
+
+.scrolling- {
+  position: relative; /* Allows content to scroll over */
+  z-index: 2; /* Places it above the slider */
+  background: white; /* Ensures content is visible */
+  margin-top: 100vh; /* Moves second component below Slider */
 }
 
 

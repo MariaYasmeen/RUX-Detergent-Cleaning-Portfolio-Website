@@ -91,7 +91,10 @@ const Navbar = () => {
         {/* Right Side - Mobile Menu */}
         <div className="d-lg-none">
       <div className="dropdown">
-        <button className="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+        <button className="btn   dropdown-toggle" 
+        type="button" data-bs-toggle="dropdown"
+        tyle={{ backgroundColor: "transparent", border: "none" }}
+        >
           ☰
         </button>
         <ul className="dropdown-menu p-3 dropdown-menu-end">

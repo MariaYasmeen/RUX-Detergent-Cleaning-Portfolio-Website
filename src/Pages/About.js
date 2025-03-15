@@ -23,6 +23,7 @@ function About() {
 
   return (
     <>
+       
       {/* Banner Image */}
       <div className="py-3 fade-in">
         <img className="img-fluid py-5 px-4" src="/mainbg.png" alt="Main Banner" />
@@ -33,7 +34,8 @@ function About() {
         <div className="row align-items-center">
           <div className="col-md-6 text-md-start text-center">
             <h2 className="fw-bold">About RUX</h2>
-            <p>RUX is a wholesale company that believes in quality and quantity at an affordable price...</p>
+            <p>RUX is a wholesale company that believes in quality and quantity at an affordable price.</p>
+            <p>From kitchens to bathrooms, homes to businesses, RUX detergents are engineered for one purpose: effortless results. Our pH-balanced formulas protect surfaces while annihilating grime, and our eco-friendly ingredients ensure safety for families and the planet. No harsh chemicals, no empty claims—just clean that speaks for itself.</p>
             <button className="btn btn-sm btn-outline-secondary btn-css rounded-pill mx-1">Learn More</button>
           </div>
           <div className="col-md-6">
