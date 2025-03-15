@@ -66,15 +66,7 @@ const Category = () => {
 
     return () => clearInterval(interval); // Cleanup interval on unmount
   }, [images.length]);
-
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
-  const goToPrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-  };
-
+ 
   return (
     <>
     

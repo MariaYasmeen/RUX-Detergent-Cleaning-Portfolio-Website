@@ -69,8 +69,8 @@ const AnimatedText = () => {
   return (
     <div className="animated-text-container">
       <h2 ref={(el) => textRefs.current.push(el)}>
-        Empowering <span className="highlight">spotless </span> 
-        <img ref={(el) => imgRefs.current.push(el)} className="textimg" src="/textimg2.png" alt="img" />
+      Redefine Clean,  <img ref={(el) => imgRefs.current.push(el)} className="textimg" src="/textimg2.png" alt="img" /> <span className="highlight">Revolutionize </span> Results
+       
       </h2>
       
       <h2 ref={(el) => textRefs.current.push(el)}>

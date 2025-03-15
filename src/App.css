@@ -22,14 +22,6 @@
   background-color: #f0f0f0; /* Light gray track */
 }
 
-/* Remove background color change on dropdown button click */
-.dropdown-toggle:focus, 
-.dropdown-toggle:active,
-.show > .dropdown-toggle {
-  background-color: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-}
 
 .underline {
   display: block;
@@ -110,7 +102,34 @@ html, body {
   background: white; /* Ensures content is visible */
   margin-top: 100vh; /* Moves second component below Slider */
 }
+ 
+/* 📱 Mobile View Fix */
+@media (max-width: 1068px) {
+  .slider-css {
+    height: 92vh; /* Full screen */
 
+    position: relative; /* Remove fixed position on small screens */
+  }
+
+  .scrolling- {
+    margin-top: 0vh !important; /* Remove extra space */
+  }
+}
+
+@media (max-width: 1011px) {
+  .slider-css {
+    height: 72vh; /* Full screen */
+
+    position: relative; /* Remove fixed position on small screens */
+  }}
+
+  @media (max-width: 758px) {
+    .slider-css {
+      height: 54vh; /* Full screen */
+  
+      position: relative; /* Remove fixed position on small screens */
+    }}
+  
 
 .abtdesc{
   color: white;

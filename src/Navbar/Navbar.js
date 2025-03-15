@@ -6,9 +6,9 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 
 const Navbar = () => {
   const navbarRef = useRef(null);
-  const [scrolled, setScrolled] = useState(false);
-  let lastScrollTop = 0;
+  const [scrolled, setScrolled] = useState(false); 
   const linksRef = useRef([]);
+  const lastScrollTop = useRef(0);  // Replace lastScrollTop with useRef
 
   useEffect(() => {
     linksRef.current.forEach((link, index) => {
@@ -28,27 +28,22 @@ const Navbar = () => {
     });
   }, []);
 
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScroll = window.scrollY;
-
-      if (currentScroll > lastScrollTop) {
-        // Scrolling Down - Hide Navbar Quickly
-        gsap.to(navbarRef.current, { y: -100, duration: 0.2, ease: "power1.out" });
+      if (currentScroll > lastScrollTop.current) {
+        gsap.to(navbarRef.current, { y: -100, duration: 0.2 });
       } else {
-        // Scrolling Up - Show Navbar Quickly
-        gsap.to(navbarRef.current, { y: 0, duration: 0.2, ease: "power1.out" });
+        gsap.to(navbarRef.current, { y: 0, duration: 0.2 });
       }
-
-      // Apply glass effect only when scrolled down
-      setScrolled(currentScroll > 10);
-
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+      lastScrollTop.current = currentScroll; // Update useRef value
     };
-
+  
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  
 
   return (
     <nav

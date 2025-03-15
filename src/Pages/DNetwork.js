@@ -12,8 +12,7 @@ function DNetwork() {
     "https://i.pinimg.com/736x/ac/ff/ff/acffff17e6e6e0fdd56dd83ca8b6eb44.jpg",
     "https://i.pinimg.com/736x/21/02/4c/21024c2dfe13f7a057dd0539f4faded7.jpg"
   ];
-  
-  const formRef = useRef(null);
+   
   const sectionRef = useRef(null);
   const cardRefs = useRef([]);
   const formContainerRef = useRef(null);

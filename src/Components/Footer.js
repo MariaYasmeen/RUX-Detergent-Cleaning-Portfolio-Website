@@ -55,23 +55,23 @@ const Footer = () => {
             <ul className="list-unstyled fs-5">
               <li className="mb-2">
                 <i className="fab fa-instagram me-2"></i> 
-                <a href="#" className="text-white text-decoration-none">Instagram</a>
+                <a href="/" className="text-white text-decoration-none">Instagram</a>
               </li>
               <li className="mb-2">
                 <i className="fab fa-linkedin me-2"></i> 
-                <a href="#" className="text-white text-decoration-none">LinkedIn</a>
+                <a href="/" className="text-white text-decoration-none">LinkedIn</a>
               </li>
               <li className="mb-2">
                 <i className="fab fa-youtube me-2"></i> 
-                <a href="#" className="text-white text-decoration-none">YouTube</a>
+                <a href="/" className="text-white text-decoration-none">YouTube</a>
               </li>
               <li className="mb-2">
                 <i className="fab fa-facebook me-2"></i> 
-                <a href="#" className="text-white text-decoration-none">Facebook</a>
+                <a href="/" className="text-white text-decoration-none">Facebook</a>
               </li>
               <li className="mb-2">
                 <i className="fab fa-twitter me-2"></i> 
-                <a href="#" className="text-white text-decoration-none">Twitter</a>
+                <a href="/" className="text-white text-decoration-none">Twitter</a>
               </li>
             </ul>
              {/* Newsletter Section - Below Follow Us */}
