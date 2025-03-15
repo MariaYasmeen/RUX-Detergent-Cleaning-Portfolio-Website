@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import Footer from '../Components/Footer';
 
 function Contact() {
     const formRef = useRef(null);
@@ -82,7 +83,7 @@ function Contact() {
     </div>
 
 
-
+<Footer />
     </div>
   )
 }
