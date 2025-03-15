@@ -12,12 +12,10 @@ import Footer from '../Components/Footer';
 
 const Category = () => {
   const images = [
-    './main1.png',
-    './main2.png',
-    './main3.png',
-    './main4.png',
-    './main5.png',
-    './main6.png',
+    './pg1.png',
+    './pg2.png',
+    './pg3.png',
+    './pg4.png', 
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

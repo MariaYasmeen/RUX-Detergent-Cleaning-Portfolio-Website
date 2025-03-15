@@ -13,7 +13,12 @@ const images = [
     text: "Turning visions into reality.",
   },
   {
-    src: "./main3.png",
+    src: "./main5.png",
+    title: "Your Success, Our Mission",
+    text: "Designing for the future.",
+  },
+  {
+    src: "./main6.png",
     title: "Your Success, Our Mission",
     text: "Designing for the future.",
   },
