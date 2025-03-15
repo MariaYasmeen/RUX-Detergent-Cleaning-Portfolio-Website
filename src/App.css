@@ -3,6 +3,28 @@
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
+::selection {
+  background-color: rgb(44, 189, 6); /* Blue background */
+  color: white; /* White text */
+}
+
+/* For WebKit-based browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 8px; /* Reduce the width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(11, 115, 214); 
+  border-radius: 3px;
+ }
+
+::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Light gray track */
+}
+
+
+
+
 .dropdown-css{
   padding: 17px;
   text-decoration: none;

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
 import "./Pages.css"; // Import custom CSS
 
@@ -100,7 +101,8 @@ const WhyChooseUs = () => {
                 pricing.
               </p>
               <p>We sell our products all over the USA. Contact us for wholesale pricing or if you are interested in becoming an independent distributor.</p>
-              <button className="cta-btn mt-auto">Join Our Network</button>
+              <Link to="/dealer-network"> <button className="cta-btn mt-auto">Join Our Network</button></Link>
+
             </div>
           </div>
         </div>
