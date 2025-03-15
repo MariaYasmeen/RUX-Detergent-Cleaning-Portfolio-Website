@@ -63,7 +63,10 @@ const CardSlider = () => {
   }, []);
 
   return (
-    <>
+    <>  {/* Background Image Section */}
+    <div className="imgctr">
+      <img src="/main4.png" className="img-fluid page-img" style={{ backgroundColor: "white" }} alt="..." />
+    </div>
       {/* Section 1 */}
       <div className="row d-flex text-center p-3 featurette align-items-center justify-content-center flex-column-reverse flex-md-row" >
         <div className="col-md-7 text-center p-3 d-flex flex-column justify-content-center" ref={(el) => (textRefs.current[0] = el)}>
@@ -119,7 +122,7 @@ const CardSlider = () => {
 
       {/* Background Image Section */}
       <div className="imgctr" ref={(el) => (imgRefs.current[2] = el)}>
-        <img src="/main4.png" className="img-fluid page-img" style={{ backgroundColor: "white" }} alt="..." />
+        <img src="/main3.png" className="img-fluid page-img" style={{ backgroundColor: "white" }} alt="..." />
       </div>
     </>
   );
