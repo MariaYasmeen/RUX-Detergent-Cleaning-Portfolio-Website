@@ -11,9 +11,10 @@ const Footer = () => {
       }}
     >
       <div className="container">
+        {/* Top Row - Three Sections in a Row */}
         <div className="row text-center text-md-start">
-          {/* Left Section */}
-          <div className="col-md-4 mb-4">
+          {/* Left Section - Contact Info */}
+          <div className="col-lg-4 col-md-6 mb-4">
             <img src="/logo.png" alt="Mellow Logo" className="mb-3" width="120" />
             <p className="fw-bold fs-5">
               Loved by Homes, Trusted by Partners – Eco-Friendly Power Meets Smart Business.
@@ -29,8 +30,8 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Middle Section */}
-          <div className="col-md-4 mb-4">
+          {/* Middle Section - Quick Links */}
+          <div className="col-lg-4 col-md-6 mb-4  "  style={{paddingTop: "70px"}}>
             <h5 className="fw-bold fs-4 mb-3">Quick Links</h5>
             <ul className="list-unstyled fs-5">
               <li className="mb-2">
@@ -40,7 +41,7 @@ const Footer = () => {
                 <a href="/about" className="text-white text-decoration-none">What we do</a>
               </li>
               <li className="mb-2">
-                <a href="/distributor" className="text-white text-decoration-none">Join our dealers network</a>
+                <a href="/dealer-network" className="text-white text-decoration-none">Join our dealers network</a>
               </li>
               <li className="mb-2">
                 <a href="/contact" className="text-white text-decoration-none">Contact</a>
@@ -49,7 +50,7 @@ const Footer = () => {
           </div>
 
           {/* Right Section - Social Links */}
-          <div className="col-md-4 mb-4">
+          <div className="col-lg-4 col-md-6 mb-4 " style={{paddingTop: "70px"}}>
             <h5 className="fw-bold fs-4 mb-3">Follow Us</h5>
             <ul className="list-unstyled fs-5">
               <li className="mb-2">
@@ -73,8 +74,28 @@ const Footer = () => {
                 <a href="#" className="text-white text-decoration-none">Twitter</a>
               </li>
             </ul>
+             {/* Newsletter Section - Below Follow Us */}
+             <div className="row">
+  <div className="col-lg-11 col-md-8">
+    <h5 className="fs-4 mb-3">Subscribe to Our Newsletter</h5>
+    <form className="d-flex">
+      <input
+        type="email"
+        className="form-control me-2 shadow-sm rounded-pill border-0"
+        placeholder="Your email"
+        required
+      />
+      <button className="btn btn-warning shadow-sm rounded-pill fw-bold px-4">
+        Subscribe
+      </button>
+    </form>
+  </div>
+</div>
+
           </div>
         </div>
+
+       
 
         {/* Bottom Section */}
         <hr className="text-white" />

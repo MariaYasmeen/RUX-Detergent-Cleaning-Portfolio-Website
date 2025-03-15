@@ -6,12 +6,20 @@ const ImageSlider = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const steps = [
     {
+      image: "./slide5.png",
+      title: "Toilet and Bathroom Cleaners",
+      headline: "Toilet and Bathroom Cleaners.",
+      subheadline: "Specifically formulated for cleaning and disinfecting toilet bowls.",
+      buttonText: "Explore Cleaners",
+      bgColor: "#70e000"
+    },
+    {
       image: "./slide1.png",
       title: "Dishwashing Detergents",
       headline: "Dishwashing Detergents",
       subheadline: "Used for cleaning dishes, cutlery, and kitchen utensils.",
       buttonText: "View Detergents",
-      bgColor: "#00b4d8"
+      bgColor: "#99582a"
     },
     {
       image: "slide2.png",
@@ -27,16 +35,9 @@ const ImageSlider = () => {
       headline: "Multi-Surface Cleaners",
       subheadline: "A versatile cleaner suitable for various surfaces.",
       buttonText: "Discover Cleaners",
-      bgColor: "#bb3e03"
+      bgColor: "#373d20"
     },
-    {
-      image: "./slide5.png",
-      title: "Toilet and Bathroom Cleaners",
-      headline: "Toilet and Bathroom Cleaners.",
-      subheadline: "Specifically formulated for cleaning and disinfecting toilet bowls.",
-      buttonText: "Explore Cleaners",
-      bgColor: "#70e000"
-    },
+    
     {
       image: "./slide4.png",
       title: "Laundry Detergents",

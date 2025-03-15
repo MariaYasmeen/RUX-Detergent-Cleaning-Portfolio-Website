@@ -1,5 +1,5 @@
 import React from 'react';
-import './AnimBtn.css'; // Make sure to import your CSS file
+import './AnimBtn.css'; 
 
 const AnimBtn = ({ buttonName, path }) => {
   return (
