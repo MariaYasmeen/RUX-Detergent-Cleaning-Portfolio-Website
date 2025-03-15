@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import Footer from '../Components/Footer';
 
 function DNetwork() {
   const imageSources = [
@@ -210,7 +211,9 @@ function DNetwork() {
         </form>
       </div>
     </div>
-
+    <div style={{marginTop:"230px"}}>
+<Footer />
+</div>
     </>
   );
 }

@@ -8,6 +8,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import ProductCard from '../Components/ProductCard';
 import SecondaryNav from '../Components/SecondaryNav';
+import Footer from '../Components/Footer';
 
 const Category = () => {
   const images = [
@@ -121,7 +122,7 @@ const Category = () => {
         ))}
       </div>
     </div>
-
+<Footer />
         </>
   );
 };

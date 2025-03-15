@@ -4,6 +4,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";  
+import Footer from "../Components/Footer";
 function About() {
 
   const services = [
@@ -124,6 +125,7 @@ function About() {
             </SwiperSlide>
           ))}
         </Swiper>
+        <Footer />
       </div>
     </>
     

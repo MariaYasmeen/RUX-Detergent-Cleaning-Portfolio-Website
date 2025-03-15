@@ -6,6 +6,7 @@ import VideoSection from "./VideoSection";
 import ImageSlider from "./ImageSlider";
 import WhyChooseUs from "./WhyChooseUs";
 import FAQs from "./FAQs";
+import Footer from "../Components/Footer";
    
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
         <ImageSlider />
     <WhyChooseUs />
     <FAQs />
+    <Footer />
       </div>
     </>
   );
