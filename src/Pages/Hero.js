@@ -1,6 +1,6 @@
 import React from "react"; 
 import Slider from "../Components/Slider";
-import AnimatedText from "../Components/AboutTxt";
+import CircleSlider from "../Components/CircleSlider";
 import CardSlider from "../Components/CardSlider";
 import VideoSection from "./VideoSection"; 
 import ImageSlider from "./ImageSlider";
@@ -13,7 +13,7 @@ const Home = () => {
     <>    
     <Slider />
         <VideoSection />
-        <AnimatedText />  
+        <CircleSlider />  
         <CardSlider />
         <ImageSlider />
     <WhyChooseUs />
