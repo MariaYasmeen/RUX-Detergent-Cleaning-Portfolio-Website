@@ -10,38 +10,23 @@ const ProductCard = ({ image, title, price }) => {
       .toLowerCase()
       .replace(/\s+/g, "-") // Replace spaces with dashes
       .replace(/[^a-z0-9-]/g, ""); // Remove special characters
-  
-    navigate(`/our-products/${formattedTitle}`);
+
+    // Navigate to product details page with product data
+    navigate(`/our-products/${formattedTitle}`, {
+      state: { title, image, price },
+    });
   };
-  
 
   return (
-    <div className="col-md-6 col-lg-4 col-xl-4 mb-4">
-      <div
-        className="card shadow-lg rounded-3 border-0 overflow-hidden position-relative"
-        style={{
-          backgroundImage: `url('${image}')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          minHeight: "420px",
-          minWidth: "180px",
-          cursor: "pointer",
-        }}
-        onClick={handleQuickView} // Navigate when clicking the card
-      >
-        <div className="product-card-overlay px-4 d-flex justify-content-between align-items-center">
-          <div>
-            <h6 className="text-uppercase fw-bold mb-1">{title}</h6>
-            <p className="text-muted m-0">FROM ${price}</p>
-          </div>
-          <div className="d-flex gap-2">
-            <button className="btn btn-outline-dark btn-soft">
-              <i className="fas fa-shopping-cart"></i>
-            </button>
-            <button className="btn btn-outline-dark btn-soft" onClick={handleQuickView}>
-              Quick View
-            </button>
-          </div>
+    <div className="col-md-6 col-lg-4 col-xl-3 mb-4">
+      <div className="card shadow-lg rounded-3 border-0 text-center p-3" style={{ backgroundColor: "white" }}>
+        <img src={image} className="card-img-top rounded-3" alt={title} style={{ height: "240px", objectFit: "cover" }} />
+        <div className="card-body p-2 d-flex flex-column justify-content-center" style={{ minHeight: "130px" }}>
+          <h6 className="text-dark fw-bold mb-1" style={{ fontSize: "14px", overflowWrap: "break-word" }}>{title}</h6>
+          <p className="text-muted small m-0">${price}</p>
+          <button className="btn btn-primary btn-sm rounded-pill px-3 mt-2" onClick={handleQuickView}>
+            Quick View
+          </button>
         </div>
       </div>
     </div>

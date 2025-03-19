@@ -10,6 +10,29 @@ import ProductCard from '../Components/ProductCard';
 import SecondaryNav from '../Components/SecondaryNav';
 import Footer from '../Components/Footer';
 
+const productData = [
+  {
+    image: "https://i.pinimg.com/736x/bd/e6/34/bde6343a6159af5d130c1255400789a0.jpg",
+    title: "Dishwashing Detergents",
+    price: "$99.99",
+  },
+  {
+    image: "https://i.pinimg.com/736x/07/4d/29/074d29dda309b0a5049a0cb1883fe645.jpg",
+    title: "Toilet and Bathroom Cleaners",
+    price: "$149.99",
+  },
+  {
+    image: "https://i.pinimg.com/736x/04/3a/ed/043aed7431d9f62521681373ab22e192.jpg",
+    title: "Multi-Surface Cleaners",
+    price: "$699.99",
+  },
+  {
+    image: "https://i.pinimg.com/736x/03/82/2b/03822b689918e2fadad0e822fea47932.jpg",
+    title: "Bleach and Stain Removers",
+    price: "$129.99",
+  },
+];
+
 const Category = () => {
   const images = [
     './pg1.png',
@@ -29,32 +52,6 @@ const Category = () => {
       ease: 'power3.out',
     });
   }, [currentIndex]);
-
-  const productData = [
-    {
-      image: "https://i.pinimg.com/736x/bd/e6/34/bde6343a6159af5d130c1255400789a0.jpg",
-      title: "Dishwashing Detergents",  // Must match ProdDesc.js
-      price: "$99.99",
-    },
-    {
-      image: "https://i.pinimg.com/736x/07/4d/29/074d29dda309b0a5049a0cb1883fe645.jpg",
-      title: "Toilet and Bathroom Cleaners", // Must match ProdDesc.js
-      price: "$149.99",
-    },
-    {
-      image: "https://i.pinimg.com/736x/04/3a/ed/043aed7431d9f62521681373ab22e192.jpg",
-      title: "Multi-Surface Cleaners", // Must match ProdDesc.js
-      price: "$699.99",
-    },
-    {
-      image: "https://i.pinimg.com/736x/03/82/2b/03822b689918e2fadad0e822fea47932.jpg",
-      title: "Bleach and Stain Removers", // Must match ProdDesc.js
-      price: "$129.99",
-    },
-  ];
-  
-
-
   // Auto Slide Functionality
   useEffect(() => {
     const interval = setInterval(() => {
@@ -66,12 +63,8 @@ const Category = () => {
  
   return (
     <>
-    
-<SecondaryNav />
-
-
-<div className="container mt-4">
-<div style={{ width: "100%", maxWidth: "1400px" }}>
+    <div className="container mt-4">
+<div style={{ width: "100%", maxWidth: "1400px", marginTop:"70px" }}>
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={30}
@@ -80,7 +73,7 @@ const Category = () => {
         pagination={{ clickable: true }}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop={true}
-        className="rounded shadow-lg"
+        className="rounded  "
       >
         {images.map((img, index) => (
           <SwiperSlide key={index}>
@@ -95,22 +88,16 @@ const Category = () => {
       </Swiper>
     </div>
  </div>
-
-   
-<div className="p-5"> 
+    <div className="container py-5">
+      <h2 className="text-center fw-bold mb-4">Our Products</h2>
       <div className="row">
         {productData.map((product, index) => (
-          <ProductCard
-            key={index}
-            image={product.image}
-            title={product.title} 
-            price={product.price}
-          />
+          <ProductCard key={index} {...product} />
         ))}
       </div>
     </div>
-<Footer />
-        </>
+    <Footer />
+    </>
   );
 };
 
