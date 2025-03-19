@@ -24,7 +24,7 @@ const ProductCard = ({ product }) => {
           src={product.image}
           className="card-img-top rounded-3"
           alt={product.title}
-          style={{ height: "180px", objectFit: "cover" }}
+          style={{ height: "250px", objectFit: "cover" }}
         />
         <div className="card-body p-2 d-flex flex-column justify-content-center">
           <h6 className="text-dark fw-bold mb-1">{product.title}</h6>

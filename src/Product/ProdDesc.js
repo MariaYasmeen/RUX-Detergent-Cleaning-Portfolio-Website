@@ -2,74 +2,135 @@ import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 
 const ProdDesc = () => {
-  const location = useLocation();  
-  const product = location.state || {}; // ✅ Ensure product is always defined
+  const location = useLocation();
+  const product = location.state || {};
 
-  // ✅ Move Hooks to Top to Prevent Conditional Calls
+  // State for selection
   const [selectedPackSize, setSelectedPackSize] = useState("Standard");
   const [selectedScent, setSelectedScent] = useState(product.scents?.[0] || "");
+  const [quantity, setQuantity] = useState(1); // Counter state
 
-  // ✅ Now it's safe to check if product is empty
+  // Ensure product data exists
   if (!product.title) return <h2 className="text-center py-5">Product Not Found</h2>;
 
   return (
-    <div className="container py-5">
-      <div className="row align-items-center">
-        {/* Product Image */}
-        <div className="col-md-5 text-center">
-          <img src={product.image} className="img-fluid rounded-4  " alt={product.title} />
-        </div>
-
-        {/* Product Title, Price, Key Features & Buttons */}
-        <div className="col-md-7 p-5">
-          <h2 className="fw-bold">{product.title}</h2>
-          <p className="text-muted fs-5">${product.price}</p>
-
-          {/* Key Features */} 
-          <ul className="list-group list-group-flush mb-3">
-            {product.description?.map((item, index) => (
-              <li key={index} className="list-group-item border-0">{item}</li>
-            ))}
-          </ul>
-
-          {/* Pack Size Selection */}
-          <h6 className="fw-bold mt-3">Select Pack Size:</h6>
-          <div className="d-flex flex-wrap gap-3 mt-2">
-            {["Standard", "Large", "Family Pack"].map((size) => (
-              <button
-                key={size}
-                className={`btn px-4 py-2 rounded-pill shadow-sm ${
-                  selectedPackSize === size ? "btn-primary text-white" : "btn-outline-dark"
-                }`}
-                onClick={() => setSelectedPackSize(size)}
-              >
-                {size}
-              </button>
-            ))}
+    <div
+      className="container-fluid py-5"
+      style={{
+        background: "linear-gradient(to right, rgba(11, 115, 214, 0.1), rgba(44, 189, 6, 0.1), white)",
+        minHeight: "100vh",
+      }}
+    >
+      <div className="container py-5">
+        <div className="row align-items-center">
+          {/* Product Image */}
+          <div className="col-md-5 text-center mb-4">
+            <img
+              src={product.image}
+              className="img-fluid rounded-4 shadow-sm"
+              alt={product.title}
+              style={{ maxHeight: "350px", objectFit: "contain" }}
+            />
           </div>
 
-          {/* Scent Selection */}
-          <h6 className="fw-bold mt-3">Select Scent:</h6>
-          <div className="d-flex flex-wrap gap-3 mt-2">
-            {product.scents?.map((scent) => (
+          {/* Product Details */}
+          <div className="col-md-7 py-4">
+            <h2 className="fw-bold">{product.title}</h2>
+            <p className="text-muted fs-5">PKR {product.price}</p>
+
+            {/* Key Features */}
+            <ul className="list-group list-group-flush mb-3">
+              {product.description?.map((item, index) => (
+                <li key={index} className="border-0">{item}</li>
+              ))}
+            </ul>
+
+            {/* Pack Size Selection */}
+            <h6 className="fw-bold mt-3">Select Pack Size:</h6>
+            <div className="d-flex flex-wrap gap-2 mt-2">
+              {["Standard", "Large", "Family Pack"].map((size) => (
+                <button
+                  key={size}
+                  className={`btn btn-sm px-3 py-1 rounded-pill shadow-sm ${
+                    selectedPackSize === size ? "btn-primary text-white" : "btn-outline-dark"
+                  }`}
+                  onClick={() => setSelectedPackSize(size)}
+                >
+                  {size}
+                </button>
+              ))}
+            </div>
+
+            {/* Scent Selection */}
+            <h6 className="fw-bold mt-3">Select Scent:</h6>
+            <div className="d-flex flex-wrap gap-2 mt-2">
+              {product.scents?.map((scent) => (
+                <button
+                  key={scent}
+                  className={`btn btn-sm px-3 py-1 rounded-pill shadow-sm ${
+                    selectedScent === scent ? "btn-primary text-white" : "btn-outline-dark"
+                  }`}
+                  onClick={() => setSelectedScent(scent)}
+                >
+                  {scent}
+                </button>
+              ))}
+            </div>
+
+            {/* Quantity Selector */}
+            <h6 className="fw-bold mt-3">Quantity:</h6>
+            <div className="d-flex align-items-center gap-3">
               <button
-                key={scent}
-                className={`btn px-4 py-2 rounded-pill shadow-sm ${
-                  selectedScent === scent ? "btn-primary text-white" : "btn-outline-dark"
-                }`}
-                onClick={() => setSelectedScent(scent)}
+                className="btn btn-outline-dark btn-sm rounded-pill px-3"
+                onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
               >
-                {scent}
+                -
               </button>
-            ))}
+              <span className="fw-bold fs-5">{quantity}</span>
+              <button
+                className="btn btn-outline-dark btn-sm rounded-pill px-3"
+                onClick={() => setQuantity((prev) => prev + 1)}
+              >
+                +
+              </button>
+            </div>
+
+            {/* Buy Now & Add to Cart Buttons */}
+            <div className="d-flex flex-wrap gap-3 mt-4">
+              <button className="btn btn-success btn-sm px-4 py-2 rounded-pill shadow-lg fw-bold">
+                <i className="fas fa-shopping-cart"></i> Add to Cart
+              </button>
+              <button className="btn btn-danger btn-sm px-4 py-2 rounded-pill shadow-lg fw-bold">
+                <i className="fas fa-bolt"></i> Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Ingredients Section */}
+        <h4 className="fw-bold mt-5">Ingredients</h4>
+        <ul className="list-group list-group-flush mb-3">
+          {product.ingredients?.map((item, index) => (
+            <li key={index} className="list-group-item border-0">{item}</li>
+          ))}
+        </ul>
+
+        {/* Safety & Usage Guidance */}
+        <div className="row mt-5">
+          <div className="col-md-6">
+            <div className="p-3 border rounded shadow-sm bg-light">
+              <h4 className="fw-bold p-2">Safety Measures</h4>
+              <p className="text-muted">{product.safety}</p>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="p-3 border rounded shadow-sm bg-light">
+              <h4 className="fw-bold p-2">Usage Instructions</h4>
+              <p className="text-muted">{product.usage}</p>
+            </div>
           </div>
         </div>
       </div>
-      <h4 className="fw-bold mt-3">Safety Measures</h4>
-      <p className="  fs-5">{product.safety}</p>
-      <h4 className="fw-bold mt-3">Usage Guidance</h4>
-      <p className="  fs-5">{product.usage}</p>
-
     </div>
   );
 };
