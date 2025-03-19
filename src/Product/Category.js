@@ -33,29 +33,26 @@ const Category = () => {
   const productData = [
     {
       image: "https://i.pinimg.com/736x/bd/e6/34/bde6343a6159af5d130c1255400789a0.jpg",
-      title: "DISH WASH LIQUID",
-      subtitle: "High-quality material",
+      title: "Dishwashing Detergents",  // Must match ProdDesc.js
       price: "$99.99",
     },
     {
       image: "https://i.pinimg.com/736x/07/4d/29/074d29dda309b0a5049a0cb1883fe645.jpg",
-      title: "TOILET BOWL LIQUID",
-      subtitle: "Elegant & Stylish",
+      title: "Toilet and Bathroom Cleaners", // Must match ProdDesc.js
       price: "$149.99",
     },
     {
       image: "https://i.pinimg.com/736x/04/3a/ed/043aed7431d9f62521681373ab22e192.jpg",
-      title: "MULTI SURFACE CLEANER",
-      subtitle: "Latest 5G technology",
+      title: "Multi-Surface Cleaners", // Must match ProdDesc.js
       price: "$699.99",
     },
     {
       image: "https://i.pinimg.com/736x/03/82/2b/03822b689918e2fadad0e822fea47932.jpg",
-      title: "BLEACH",
-      subtitle: "Crystal-clear sound",
+      title: "Bleach and Stain Removers", // Must match ProdDesc.js
       price: "$129.99",
     },
   ];
+  
 
 
   // Auto Slide Functionality

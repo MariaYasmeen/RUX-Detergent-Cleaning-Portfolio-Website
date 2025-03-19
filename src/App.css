@@ -116,6 +116,35 @@ html, body {
   }
 }
 
+/* Responsive text sizing */
+.display-6 { font-size: calc(1.5rem + 1vw); }
+.display-md-4 { font-size: calc(1.75rem + 1.5vw); }
+.display-lg-3 { font-size: calc(2rem + 2vw); }
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .swiper-slide img {
+    height: 50vh !important;
+    min-height: 300px !important;
+  }
+  
+  .position-absolute {
+    padding: 1.5rem !important;
+    max-width: 100% !important;
+  }
+  
+  .display-6 {
+    font-size: calc(1.2rem + 1vw);
+  }
+}
+
+/* Tablet optimization */
+@media (min-width: 769px) and (max-width: 992px) {
+  .display-md-4 {
+    font-size: calc(1.5rem + 1vw);
+  }
+}
+
 @media (max-width: 1011px) {
   .slider-css {
     height: 72vh; /* Full screen */

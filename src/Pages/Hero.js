@@ -10,19 +10,15 @@ import Footer from "../Components/Footer";
    
 const Home = () => {
   return (
-    <>  
-       <div className="slider-css">
-        <Slider />
-      </div>
-      <div className="scrolling- ">
+    <>    
+    <Slider />
         <VideoSection />
-        <AnimatedText /> 
-        <CardSlider /> 
+        <AnimatedText />  
+        <CardSlider />
         <ImageSlider />
     <WhyChooseUs />
     <FAQs />
-    <Footer />
-      </div>
+    <Footer /> 
     </>
   );
 };

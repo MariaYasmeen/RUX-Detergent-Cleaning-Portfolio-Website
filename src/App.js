@@ -12,15 +12,11 @@ import Contact from './Pages/Contact';
 import About from './Pages/About';
 import Loader from './Pages/Loader';
 
-function App() {
-  const [loading, setLoading] = useState(true);
+function App() { 
 
   return (
     <>
-      {loading && <Loader onComplete={() => setLoading(false)} />}  
-      
-      {!loading && (
-        <BrowserRouter>
+         <BrowserRouter>
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} /> 
@@ -30,8 +26,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />  
             <Route path="/our-products/:title" element={<ProdDesc />} />
           </Routes>
-        </BrowserRouter>
-      )}
+        </BrowserRouter> 
     </>
   );
 }
