@@ -25,11 +25,13 @@ const ProductCard = ({ product }) => {
           src={product.image}
           className="card-img-top rounded-3 prodcardcss"
           alt={product.title} 
+          onClick={handleQuickView}
+          style={{cursor: "pointer"}}
         />
         <div className="card-body p-2 d-flex flex-column justify-content-center">
           <h6 className="text-dark fw-bold mb-1">{product.title}</h6>
           <p className="text-muted small m-0">${product.price}</p>
-          <button className="btn btn-primary btn-sm rounded-pill px-3 mt-2" onClick={handleQuickView}>
+          <button className="btn  btn-sm rounded-pill px-3 mt-2" onClick={handleQuickView} style={{backgroundColor:"rgb(11, 115, 214)", color:"white"}}>
             Quick View
           </button>
         </div>

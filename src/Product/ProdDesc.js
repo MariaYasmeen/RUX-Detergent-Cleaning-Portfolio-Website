@@ -27,7 +27,7 @@ const ProdDesc = () => {
           <div className="col-md-5 text-center mb-4 ">
             <img
               src={product.image}
-              className="img-fluid rounded-4 "
+              className="img-fluid rounded-4 p-2"
               alt={product.title}
               style={{ maxHeight: "480px", objectFit: "contain" }}
             />
@@ -81,16 +81,16 @@ const ProdDesc = () => {
           </div>
         </div>
  
-        <div className="container py-3">
+        <div className="  p-4">
   <div className="row g-4">
 
      {/* Second Box */}
      <div className="col-lg-4 col-md-6">
       <div className="p-4 shadow-sm bg-light h-100 d-flex flex-column " style={{borderRadius:"25px"}}>
-      <h4 className="fw-bold ">Ingredients</h4>
-        <ul className="list-group list-group-flush mb-3">
+      <h4 className="fw-bold bg-light">Ingredients</h4>
+        <ul className="list-group bg-light list-group-flush mb-3" >
           {product.ingredients?.map((item, index) => (
-            <li key={index} className="list-group-item border-0">{item}</li>
+            <li key={index} className="list-group-item bg-light border-0" >{item}</li>
           ))}
         </ul>   </div>
     </div>

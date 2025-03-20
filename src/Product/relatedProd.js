@@ -75,12 +75,9 @@ const RelatedProd = () => {
               <div className="related-card-body">
                 <h5 className="fw-bold">{product.title}</h5>
                 <p className="text-muted">PKR {product.price}</p>
-                <button
-                  className="btn btn-primary btn-sm"
-                  onClick={() => handleQuickView(product)} // ✅ Pass product details
-                >
-                  Quick View
-                </button>
+                 <button className="btn  btn-sm rounded-pill px-3 mt-2"  onClick={() => handleQuickView(product)} style={{backgroundColor:"rgb(11, 115, 214)", color:"white"}}>
+            Quick View
+          </button>
               </div>
             </div>
           </SwiperSlide>
