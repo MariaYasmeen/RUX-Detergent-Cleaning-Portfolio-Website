@@ -4,7 +4,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import ProductCard from "../Components/ProductCard";
+ import ProductCard from "../Components/ProductCard";
 
  
 const productData = [
@@ -86,6 +86,7 @@ const slides = [
 ];
 
 
+
 const Category = () => {
   return (
     <>
@@ -122,7 +123,9 @@ const Category = () => {
           <ProductCard key={index} product={product} />
         ))}
       </div>
-    </div>
+    </div> 
+ 
+
     </>
   );
 };

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import Footer from "../Components/Footer"; 
+import RelatedProd from "./relatedProd"; 
 
 const ProdDesc = () => {
   const location = useLocation();
@@ -14,22 +16,19 @@ const ProdDesc = () => {
   if (!product.title) return <h2 className="text-center py-5">Product Not Found</h2>;
 
   return (
+  <>
     <div
       className="container-fluid py-5"
-      style={{
-        background: "linear-gradient(to right, rgba(11, 115, 214, 0.1), rgba(44, 189, 6, 0.1), white)",
-        minHeight: "100vh",
-      }}
-    >
+      >
       <div className="container py-5">
         <div className="row align-items-center">
           {/* Product Image */}
           <div className="col-md-5 text-center mb-4">
             <img
               src={product.image}
-              className="img-fluid rounded-4 shadow-sm"
+              className="img-fluid rounded-4 "
               alt={product.title}
-              style={{ maxHeight: "350px", objectFit: "contain" }}
+              style={{ maxHeight: "480px", objectFit: "contain" }}
             />
           </div>
 
@@ -95,15 +94,7 @@ const ProdDesc = () => {
               </button>
             </div>
 
-            {/* Buy Now & Add to Cart Buttons */}
-            <div className="d-flex flex-wrap gap-3 mt-4">
-              <button className="btn btn-success btn-sm px-4 py-2 rounded-pill shadow-lg fw-bold">
-                <i className="fas fa-shopping-cart"></i> Add to Cart
-              </button>
-              <button className="btn btn-danger btn-sm px-4 py-2 rounded-pill shadow-lg fw-bold">
-                <i className="fas fa-bolt"></i> Buy Now
-              </button>
-            </div>
+           
           </div>
         </div>
 
@@ -132,6 +123,10 @@ const ProdDesc = () => {
         </div>
       </div>
     </div>
+    <RelatedProd/>
+    <Footer />
+    
+    </>
   );
 };
 

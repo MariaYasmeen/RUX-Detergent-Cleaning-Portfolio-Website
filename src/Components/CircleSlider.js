@@ -46,7 +46,7 @@ const CircleSlider = () => {
         <div className="col-md-8">
           <Swiper
             modules={[Autoplay, Navigation, Pagination]}
-            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            autoplay={{ delay: 2000, disableOnInteraction: false }}
             loop={true}
             navigation
             pagination={{ clickable: true }}
