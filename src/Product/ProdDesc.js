@@ -18,7 +18,7 @@ const ProdDesc = () => {
   <>
     <div className="container-fluid py-5 " >
       <div className=" py-5" style={{
-      background: "radial-gradient(circle,rgb(164, 237, 252),rgb(215, 255, 233), #caf0f8)",
+      background: "radial-gradient(circle,rgb(164, 237, 252),rgb(152, 255, 199), #caf0f8)",
       borderRadius:"25px 25px 0px 0px",
       marginTop:"19px"
     }}>
@@ -81,38 +81,48 @@ const ProdDesc = () => {
           </div>
         </div>
  
-        <div className="  p-4">
+        <div className="p-4">
   <div className="row g-4">
 
-     {/* Second Box */}
-     <div className="col-lg-4 col-md-6">
-      <div className="p-4 shadow-sm bg-light h-100 d-flex flex-column " style={{borderRadius:"25px"}}>
-      <h4 className="fw-bold bg-light">Ingredients</h4>
-        <ul className="list-group bg-light list-group-flush mb-3" >
+    {/* Ingredients Box */}
+    <div className="col-lg-4 col-md-6">
+      <div className="p-4 shadow-sm bg-light h-100 d-flex flex-column" style={{ borderRadius: "25px" }}>
+        <h4 className="fw-bold bg-light">Ingredients</h4>
+        <ul className="list-group bg-light list-group-flush mb-3">
           {product.ingredients?.map((item, index) => (
-            <li key={index} className="list-group-item bg-light border-0" >{item}</li>
+            <li key={index} className="list-group-item bg-light border-0">{item}</li>
           ))}
-        </ul>   </div>
-    </div>
-
-
-    {/* First Box */}
-    <div className="col-lg-4 col-md-6" >
-      <div className="p-4  shadow-sm bg-light h-100 d-flex flex-column " style={{borderRadius:"25px"}}>
-      <h4 className="fw-bold p-2">Usage Instructions</h4>
-      <p className="text-muted">{product.usage}</p></div>
-    </div>
-
-   
-    {/* Third Box */}
-    <div className="col-lg-4 col-md-12">
-      <div className="p-4  shadow-sm bg-light h-100 d-flex flex-column  " style={{borderRadius:"25px"}}>
-      <h4 className="fw-bold p-2">Safety Measures</h4>
-      <p className="text-muted">{product.safety}</p>
+        </ul>
       </div>
     </div>
+
+    {/* Usage Instructions Box */}
+    <div className="col-lg-4 col-md-6">
+      <div className="p-4 shadow-sm bg-light h-100 d-flex flex-column" style={{ borderRadius: "25px" }}>
+        <h4 className="fw-bold p-2">Usage Instructions</h4>
+        <ul className="list-group list-group-flush">
+          {product.usage?.map((instruction, index) => (
+            <li key={index} className="list-group-item bg-light border-0">{instruction}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    {/* Safety Measures Box */}
+    <div className="col-lg-4 col-md-12">
+      <div className="p-4 shadow-sm bg-light h-100 d-flex flex-column" style={{ borderRadius: "25px" }}>
+        <h4 className="fw-bold p-2">Safety Measures</h4>
+        <ul className="list-group list-group-flush">
+          {product.safety?.map((measure, index) => (
+            <li key={index} className="list-group-item bg-light border-0">{measure}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
   </div>
 </div>
+
       </div>
     </div>
 

@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import './Components.css'; 
 import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "swiper/css/pagination"; 
 import { Link } from "react-router-dom";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import "bootstrap/dist/css/bootstrap.min.css";
+gsap.registerPlugin(ScrollTrigger);
 
 const CircleSlider = () => {
   const sliderItems = [
@@ -31,6 +34,25 @@ const CircleSlider = () => {
     },
   ];
 
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      sectionRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%", // Animation triggers when 80% of the section enters the viewport
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  }, []);
   return (
     <>
     <div className="container my-5">
@@ -115,6 +137,39 @@ const CircleSlider = () => {
           ))}
         </div>
       </div>
+
+      <div className="container my-3">
+      <div
+        ref={sectionRef}
+        className="p-5 text-center rounded-4  "
+        style={{ overflow: "hidden" }}
+      >
+        {/* Headline */}
+        <h1 className="text-primary fw-bold  ">
+          Powerful Cleaning, Gentle Care – RUX Detergents
+        </h1>
+
+        {/* Subheadline */}
+        <p className="col-lg-11 mx-auto fs-5  mt-3">
+          At RUX, we believe in cleaning that goes beyond the surface. From dishwashing liquids to multi-surface cleaners, every drop is
+          packed with powerful ingredients that leave your home fresh, spotless, and safe. Experience
+          the perfect balance of strength and care – because a truly clean home starts with the right detergent.
+        </p>
+
+        {/* Call-to-Action Button */}
+        <div className="d-inline-flex gap-2 mt-4">
+          <Link to="/about">
+            <button
+              className="btn btn-primary btn-lg px-4 rounded-pill shadow-sm fw-bold"
+              type="button"
+            >
+              Know More About Us
+            </button>
+          </Link>
+        </div>
+      </div>
+    </div>
+
     </> 
   );
 };

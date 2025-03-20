@@ -183,7 +183,7 @@ import "swiper/css/pagination";
     ],
   },
   {
-    image: "https://i.pinimg.com/736x/76/6e/d6/766ed67bfa57fa59066445e19776832b.jpg",
+    image: "https://i.pinimg.com/736x/09/3b/41/093b41d21f9b2508392369a880957d0e.jpg",
     title: "RUX METAL CLEANER",
     price: "850",
     description: ["Streak-free shine", "Removes dirt and smudges", "Quick drying"],
@@ -281,12 +281,13 @@ const Category = () => {
       </Swiper>
     </div>
     <div className="container py-5">
-       <div className="row">
-        {productData.map((product, index) => (
-          <ProductCard key={index} product={product} />
-        ))}
-      </div>
-    </div> 
+  <div className="row g-3">
+    {productData.map((product, index) => (
+      <ProductCard key={index} product={product} />
+    ))}
+  </div>
+</div>
+
  
 <Footer />
     </>

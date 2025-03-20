@@ -72,14 +72,12 @@ const Slider = () => {
                 maxWidth: "90%",
                 zIndex: 2
               }}>
-              <h2 className="display-6 display-md-2 display-lg-1 fw-bold text-white mb-2 mb-md-3"
-                  style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.5)" }}>
+              <h2 className="display-6 display-md-2 display-lg-1 fw-bold   mb-2 mb-md-3" >
                 {slide.title}
               </h2>
-              <p className="d-none d-md-block text-white mb-3 mb-lg-4"
+              <p className="d-none d-md-block   mb-3 mb-lg-4"
                  style={{
-                   fontSize: "clamp(0.9rem, 1.5vw, 1.1rem)",
-                   textShadow: "1px 1px 2px rgba(0,0,0,0.5)"
+                   fontSize: "clamp(0.9rem, 1.5vw, 1.1rem)", 
                  }}>
                 {slide.subtitle}
               </p>
