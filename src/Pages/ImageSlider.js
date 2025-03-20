@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { gsap } from 'gsap';
+import "./Pages.css";
 
 const ImageSlider = () => {
   const [currentStep, setCurrentStep] = useState(0);

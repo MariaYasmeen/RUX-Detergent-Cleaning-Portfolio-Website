@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "./Components.css";
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
@@ -18,13 +19,12 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="col-md-6 col-lg-4 col-xl-3 mb-4">
-      <div className="card shadow-lg rounded-3 border-0 text-center p-3" style={{ backgroundColor: "white" }}>
+    <div className="col-md-6 col-lg-4 col-xl-3 mb-4 prodcard" >
+      <div className="card shadow-lg prodimgcss rounded-3 border-0 text-center p-3" style={{ backgroundColor: "white" }}>
         <img
           src={product.image}
-          className="card-img-top rounded-3"
-          alt={product.title}
-          style={{ height: "250px", objectFit: "cover" }}
+          className="card-img-top rounded-3 prodcardcss"
+          alt={product.title} 
         />
         <div className="card-body p-2 d-flex flex-column justify-content-center">
           <h6 className="text-dark fw-bold mb-1">{product.title}</h6>

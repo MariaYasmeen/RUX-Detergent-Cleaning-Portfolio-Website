@@ -5,6 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
  import ProductCard from "../Components/ProductCard";
+ import Footer from "../Components/Footer"; 
 
  
 const productData = [
@@ -117,15 +118,14 @@ const Category = () => {
       </Swiper>
     </div>
     <div className="container py-5">
-      <h2 className="text-center fw-bold mb-4">Our Products</h2>
-      <div className="row">
+       <div className="row">
         {productData.map((product, index) => (
           <ProductCard key={index} product={product} />
         ))}
       </div>
     </div> 
  
-
+<Footer />
     </>
   );
 };

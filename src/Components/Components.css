@@ -148,3 +148,17 @@
     height: 110px !important;
   }
 }
+
+
+
+.prodcardcss{
+  object-fit: cover;
+   height: 280px;  
+}
+
+@media (max-width: 990px) {
+  .prodcardcss{
+    height: 340px !important; 
+  }
+}
+ 

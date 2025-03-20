@@ -10,20 +10,21 @@ const ProdDesc = () => {
   // State for selection
   const [selectedPackSize, setSelectedPackSize] = useState("Standard");
   const [selectedScent, setSelectedScent] = useState(product.scents?.[0] || "");
-  const [quantity, setQuantity] = useState(1); // Counter state
-
+ 
   // Ensure product data exists
   if (!product.title) return <h2 className="text-center py-5">Product Not Found</h2>;
 
   return (
   <>
-    <div
-      className="container-fluid py-5"
-      >
-      <div className="container py-5">
+    <div className="container-fluid py-5 " >
+      <div className=" py-5" style={{
+      background: "radial-gradient(circle,rgb(164, 237, 252),rgb(152, 255, 199), #caf0f8)",
+      borderRadius:"25px 25px 0px 0px",
+      marginTop:"19px"
+    }}>
         <div className="row align-items-center">
           {/* Product Image */}
-          <div className="col-md-5 text-center mb-4">
+          <div className="col-md-5 text-center mb-4 ">
             <img
               src={product.image}
               className="img-fluid rounded-4 "
@@ -33,9 +34,9 @@ const ProdDesc = () => {
           </div>
 
           {/* Product Details */}
-          <div className="col-md-7 py-4">
+          <div className="col-md-7 p-5">
             <h2 className="fw-bold">{product.title}</h2>
-            <p className="text-muted fs-5">PKR {product.price}</p>
+            <p className=" fs-5">PKR {product.price}</p>
 
             {/* Key Features */}
             <ul className="list-group list-group-flush mb-3">
@@ -76,53 +77,48 @@ const ProdDesc = () => {
               ))}
             </div>
 
-            {/* Quantity Selector */}
-            <h6 className="fw-bold mt-3">Quantity:</h6>
-            <div className="d-flex align-items-center gap-3">
-              <button
-                className="btn btn-outline-dark btn-sm rounded-pill px-3"
-                onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
-              >
-                -
-              </button>
-              <span className="fw-bold fs-5">{quantity}</span>
-              <button
-                className="btn btn-outline-dark btn-sm rounded-pill px-3"
-                onClick={() => setQuantity((prev) => prev + 1)}
-              >
-                +
-              </button>
-            </div>
-
-           
+                
           </div>
         </div>
+ 
+        <div className="container py-3">
+  <div className="row g-4">
 
-        {/* Ingredients Section */}
-        <h4 className="fw-bold mt-5">Ingredients</h4>
+     {/* Second Box */}
+     <div className="col-lg-4 col-md-6">
+      <div className="p-4 shadow-sm bg-light h-100 d-flex flex-column " style={{borderRadius:"25px"}}>
+      <h4 className="fw-bold ">Ingredients</h4>
         <ul className="list-group list-group-flush mb-3">
           {product.ingredients?.map((item, index) => (
             <li key={index} className="list-group-item border-0">{item}</li>
           ))}
-        </ul>
+        </ul>   </div>
+    </div>
 
-        {/* Safety & Usage Guidance */}
-        <div className="row mt-5">
-          <div className="col-md-6">
-            <div className="p-3 border rounded shadow-sm bg-light">
-              <h4 className="fw-bold p-2">Safety Measures</h4>
-              <p className="text-muted">{product.safety}</p>
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="p-3 border rounded shadow-sm bg-light">
-              <h4 className="fw-bold p-2">Usage Instructions</h4>
-              <p className="text-muted">{product.usage}</p>
-            </div>
-          </div>
-        </div>
+
+    {/* First Box */}
+    <div className="col-lg-4 col-md-6" >
+      <div className="p-4  shadow-sm bg-light h-100 d-flex flex-column " style={{borderRadius:"25px"}}>
+      <h4 className="fw-bold p-2">Usage Instructions</h4>
+      <p className="text-muted">{product.usage}</p></div>
+    </div>
+
+   
+    {/* Third Box */}
+    <div className="col-lg-4 col-md-12">
+      <div className="p-4  shadow-sm bg-light h-100 d-flex flex-column  " style={{borderRadius:"25px"}}>
+      <h4 className="fw-bold p-2">Safety Measures</h4>
+      <p className="text-muted">{product.safety}</p>
       </div>
     </div>
+  </div>
+</div>
+      </div>
+    </div>
+
+  
+
+
     <RelatedProd/>
     <Footer />
     
