@@ -4,6 +4,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { Link } from "react-router-dom";
 
 const CardSlider = () => {
   const cards = [
@@ -36,7 +37,7 @@ const CardSlider = () => {
             <div className="card   border-0 rounded-3 text-center h-90 bg-info bg-opacity-25" style={{ height: "450px", width: "100%" }}>
               {/* Fixed Height Image */}
               <div className="d-flex p-3 justify-content-center align-items-center" style={{ height: "290px" }}>
-                <img src={card.img} className="w-100 h-100 object-fit-cover rounded-top-3" alt={card.title} />
+              <Link to="/our-products"> <img src={card.img} className="w-100 h-100 object-fit-cover rounded-top-3" alt={card.title} /></Link>
               </div>
               {/* Card Body */}
               <div className="card-body d-flex flex-column justify-content-between" style={{color:"black"}}>

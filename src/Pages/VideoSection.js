@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const VideoSection = () => {
   return (
@@ -11,7 +12,7 @@ const VideoSection = () => {
           At RUX, we don’t just clean surfaces—we transform spaces. Born from a mission to make powerful cleaning accessible, our seven specialized detergents tackle everything from stubborn kitchen grease to sun-stained laundry. 
           </p>
           <p className=" abtdesc">Backed by science and crafted for sustainability, every bottle is a promise: your trust is our formula.</p>
-          <button className="btn btn-primary explore-btn">Learn More</button>
+        <Link to="/about"><button className="btn btn-primary explore-btn">Learn More</button></Link>  
         </div>
 
         {/* Right Portion - Embedded YouTube Video */}

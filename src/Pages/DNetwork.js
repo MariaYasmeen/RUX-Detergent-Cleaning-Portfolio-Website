@@ -53,7 +53,7 @@ function DNetwork() {
           opacity: 0, // Initially hidden
         }}
       >
-        <div className="container">
+        <div className="container p-4 my-2">
           <h1 className="display-6 fw-bold">Join Our Dealers Network</h1>
           <div className="col-lg-9 mx-auto">
             <p className="lead mb-1">

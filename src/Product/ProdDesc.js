@@ -18,7 +18,7 @@ const ProdDesc = () => {
   <>
     <div className="container-fluid py-5 " >
       <div className=" py-5" style={{
-      background: "radial-gradient(circle,rgb(164, 237, 252),rgb(152, 255, 199), #caf0f8)",
+      background: "radial-gradient(circle,rgb(164, 237, 252),rgb(215, 255, 233), #caf0f8)",
       borderRadius:"25px 25px 0px 0px",
       marginTop:"19px"
     }}>

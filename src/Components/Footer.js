@@ -14,8 +14,8 @@ const Footer = () => {
         {/* Top Row - Three Sections */}
         <div className="row text-center text-md-start">
           {/* Left Section - Contact Info */}
-          <div className="col-lg-4 col-md-6 mb-4">
-            <img src="/logo.png" alt="Mellow Logo" className="mb-3" width="120" />
+          <div className="col-lg-4 col-md-6 " >
+            <img src="/logo.png" alt="Mellow Logo" className="mb-3 p-2" width="120" style={{backgroundColor:"white", borderRadius:"7px"}}/>
             <p className="fw-bold fs-5">
               Loved by Homes, Trusted by Partners – Eco-Friendly Power Meets Smart Business.
             </p>
