@@ -11,12 +11,14 @@ import DNetwork from './Pages/DNetwork';
 import Contact from './Pages/Contact';
 import About from './Pages/About';
 import Loader from './Pages/Loader';
+import ScrollToTop from "./Components/ScrollToTop";
 
 function App() { 
 
   return (
     <>
          <BrowserRouter>
+         <ScrollToTop />
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} /> 
